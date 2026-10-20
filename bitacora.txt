@@ -5,3 +5,9 @@ Puerto: 5500
 Ruta: /index.html
 Peticion: GET
 Estado: 101
+
+URL: /promociones.html 
+Codigo: 404
+Significado: Not found, el recurso no existe
+
+
