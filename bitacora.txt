@@ -10,4 +10,12 @@ URL: /promociones.html
 Codigo: 404
 Significado: Not found, el recurso no existe
 
+Rol de cada lenguaje en la pagina:
+HTML: la estructura y el contenido
+Ejemplo: el titulo principal y el parrafo de bienvenida
 
+CSS: el aspecto visual
+Ejemplo: poner el titulo en verde y centrado
+
+JavaScript: el comportamiento
+Ejemplo: un boton "Reserva" que muestra un mensaje al pulsarlo
