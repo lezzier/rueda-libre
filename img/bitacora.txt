@@ -1,0 +1,7 @@
+URL completo: http://127.0.0.1:5500/index.html
+Protocolo: http
+Host: 127.0.0.1:5500
+Puerto: 5500
+Ruta: /index.html
+Peticion: GET
+Estado: 101
