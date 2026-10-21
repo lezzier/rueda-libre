@@ -4,7 +4,7 @@ Host: 127.0.0.1
 Puerto: 5500
 Ruta: /index.html
 Peticion: GET
-Estado: 101
+Estado: 200
 
 URL: /promociones.html 
 Codigo: 404
