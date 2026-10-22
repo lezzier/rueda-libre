@@ -19,3 +19,19 @@ Ejemplo: poner el titulo en verde y centrado
 
 JavaScript: el comportamiento
 Ejemplo: un boton "Reserva" que muestra un mensaje al pulsarlo
+
+Rutas del sitio:
+Página de origen | Enlace | Ruta
+index.html | Inicio | index.html
+index.html | Tarifas y rutas | paginas/tarifas.html
+index.html | Recorridos | paginas/tarifas.html#recorridos
+index.html | Reservas | paginas/reservas.html
+
+paginas/tarifas.html | Inicio | ../index.html
+paginas/tarifas.html | Tarifas y rutas | tarifas.html
+paginas/tarifas.html | Reservas | reservas.html
+paginas/tarifas.html | Reservar ahora | reservas.html
+
+paginas/reservas.html | Inicio | ../index.html
+paginas/reservas.html | Tarifas y rutas | tarifas.html
+paginas/reservas.html | Reservas | reservas.html
