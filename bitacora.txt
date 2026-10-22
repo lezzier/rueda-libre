@@ -35,3 +35,23 @@ paginas/tarifas.html | Reservar ahora | reservas.html
 paginas/reservas.html | Inicio | ../index.html
 paginas/reservas.html | Tarifas y rutas | tarifas.html
 paginas/reservas.html | Reservas | reservas.html
+
+Esquema de las paginas:
+
+Inicio:
+header: nombre del negocio y nav con inicio, tarifas y rutas, y reservas
+main: secciones de presentacion, quienes somos, servicios, beneficios, como alquilar y ubicacion
+servicios: tres article, uno para alquiler por horas, otro por dia y otro para recorridos guiados
+footer: nombre del negocio, correo y año
+
+Tarifas:
+header: nombre del negocio y nav con inicio, tarifas y rutas, y reservas
+main: secciones de tarifas, recorridos e informacion adicional
+aside dentro de informacion adicional: lista de que llevar
+footer: nombre del negocio, correo y año
+
+Reservas:
+header: nombre del negocio y nav con inicio, tarifas y rutas, y reservas
+main: seccion de contacto
+aside: horario de atencion en una lista de definiciones
+footer: nombre del negocio, correo y año
