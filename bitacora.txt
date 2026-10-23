@@ -52,6 +52,15 @@ footer: nombre del negocio, correo y año
 
 Reservas:
 header: nombre del negocio y nav con inicio, tarifas y rutas, y reservas
-main: seccion de contacto
+main: secciones de formulario de reserva y contacto
+formulario: fieldsets Tus datos, Tu alquiler y Confirmacion; boton Enviar reserva
 aside: horario de atencion en una lista de definiciones
 footer: nombre del negocio, correo y año
+
+Formulario de reserva:
+Nombre y documento usan texto para aceptar los datos tal como los escribe el cliente
+Correo usa email y celular usa tel para indicar el tipo de dato
+Fecha usa date: tipo de bicicleta usa radios con el mismo name para elegir una sola opcion
+Plan y recorrido usan select porque se elige una opcion de una lista
+Cantidad usa number con minimo 1: comentarios usan textarea para permitir texto libre
+La aceptacion usa checkbox porque se puede marcar o dejar sin marcar
