@@ -58,9 +58,25 @@ aside: horario de atencion en una lista de definiciones
 footer: nombre del negocio, correo y año
 
 Formulario de reserva:
-Nombre y documento usan texto para aceptar los datos tal como los escribe el cliente
-Correo usa email y celular usa tel para indicar el tipo de dato
-Fecha usa date: tipo de bicicleta usa radios con el mismo name para elegir una sola opcion
-Plan y recorrido usan select porque se elige una opcion de una lista
-Cantidad usa number con minimo 1: comentarios usan textarea para permitir texto libre
-La aceptacion usa checkbox porque se puede marcar o dejar sin marcar
+Al nombre le puse minimo 3 caracteres
+El documento lo deje como texto para conservar ceros al inicio, pero solo acepta de 6 a 10 numeros
+El correo debe tener formato de email, el celular debe tener 10 numeros y empezar por 3
+La fecha solo se puede elegir entre el 1 de noviembre y el 31 de diciembre de 2026
+Para la bicicleta use radios porque solo se puede elegir una, el plan y el recorrido se eligen de una lista
+La cantidad va de 1 a 6, los comentarios son opcionales y tienen un limite de 300 caracteres
+La casilla de politicas es obligatoria para poder enviar la reserva
+
+Pruebas que hice:
+Campo | Valor probado | Esperaba | Resultado
+Nombre | "Al" y "Ana" | Al primero lo rechaza y al segundo lo acepta | asi paso
+Documento | 12345, 12A456 y 001234 | Rechazar los dos primeros y aceptar el ultimo | asi paso: mantuvo los ceros
+Correo | anamail y ana@example.com | Rechazar el primero y aceptar el segundo | asi paso
+Celular | 1234567890, 300123 y 3001234567 | Rechazar los dos primeros y aceptar el ultimo | asi paso
+Fecha | 2026-10-31, 2026-11-01, 2026-12-31 y 2027-01-01 | Rechazar fechas fuera del rango | asi paso
+Cantidad | 0, 1, 6 y 7 | Aceptar solo del 1 al 6 | asi paso
+Bicicleta y plan | Sin seleccionar y con una opcion elegida | Rechazar si falta una opcion obligatoria | asi paso
+Politicas y comentarios | Casilla sin marcar y marcada; comentario de 301 caracteres | Exigir aceptacion y limitar comentarios a 300 | asi paso
+
+Teclado:
+Con tab desde nombre completo llegue a numero de documento: con shift+tab volvi a nombre completo
+Con enter y campos obligatorios vacios, el navegador no envio el formulario
