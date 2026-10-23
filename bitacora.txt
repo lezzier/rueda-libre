@@ -80,3 +80,24 @@ Politicas y comentarios | Casilla sin marcar y marcada; comentario de 301 caract
 Teclado:
 Con tab desde nombre completo llegue a numero de documento: con shift+tab volvi a nombre completo
 Con enter y campos obligatorios vacios, el navegador no envio el formulario
+
+Revision de accesibilidad y colores:
+En las tres paginas revise el idioma, los titulos y los enlaces. Cada una tiene lang="es" y un solo h1; no encontre saltos en el orden de los titulos ni enlaces locales rotos.
+En Inicio, los textos alternativos de la foto de los ciclistas y del mapa eran poco precisos. Los cambie para describir mejor lo que muestran.
+El sitio todavia no tiene CSS, asi que por ahora solo calcule la paleta; aun no se ve aplicada en la pagina.
+
+Contraste de la paleta (WCAG):
+Para texto normal se necesitan 4.5:1; para texto grande, 3:1.
+Combinacion | Contraste | Clasificacion
+Blanco sobre Verde Ruta | 5.31:1 | Apta para texto normal
+Blanco sobre Naranja Pedal | 2.22:1 | No apta para texto
+Azul Noche sobre Naranja Pedal | 7.20:1 | Apta para texto normal
+Azul Noche sobre Crema | 14.83:1 | Apta para texto normal
+Gris Asfalto sobre Crema | 5.57:1 | Apta para texto normal
+Naranja Pedal sobre Crema | 2.06:1 | No apta para texto
+Verde Ruta sobre Naranja Pedal | 2.40:1 | No apta para texto
+Naranja Pedal sobre Azul Noche | 7.20:1 | Apta para texto normal
+Ninguna combinacion queda solo como apta para texto grande: las que pasan superan 4.5:1 y las que no, quedan bajo 3:1.
+
+GitHub Pages:
+Revise https://lezzier.github.io/rueda-libre/ y responde 404; el sitio aun no esta publicado.
