@@ -201,3 +201,32 @@ Causa: el id pesa más que la clase. Por eso .activo estaba en el HTML y en el C
 
 Solución: cambié .activo por "#menu a.activo", que pesa (1, 1, 1) y supera a "#menu a" porque suma una clase.
 Después, en el Reto 8, ajusté los colores del menú al mapa aprobado: todos los enlaces en Naranja Pedal sobre Azul Noche; el activo se distingue con negrita y subrayado (sin cambiar a verde ni gris). En :hover pasan a Crema sobre Azul Noche.
+
+
+RETO 11: Todo en su lugar (modelo de caja)
+
+box-sizing global:
+- Apliqué * { box-sizing: border-box; } para que width y max-width incluyan padding y borde en todas las cajas.
+
+Contenido principal y portada:
+- main con max-width: 40rem y margin: auto para centrar la columna de contenido en las tres páginas.
+- En index.html la primera sección lleva class="portada" y min-height: 70vh para que la portada ocupe al menos el 70 % del alto visible de la ventana.
+
+Tarjetas de servicios (Inicio):
+- Cada servicio es un article con class="tarjeta-servicio", con padding, borde naranja, border-radius y margin-bottom usando --espacio-m.
+- La imagen va dentro de cada tarjeta; .tarjeta-servicio img { width: 100%; display: block; }.
+
+Tablas (Tarifas):
+- table con width 100 % y border-collapse; padding y borde en th y td; thead th con fondo Azul Noche y texto Crema; tbody th en negrita.
+
+Formulario (Reservas):
+- fieldset con borde, padding y separación entre grupos; legend con fuente de títulos.
+- Etiquetas de campos de texto encima del control (label en bloque); radios y checkbox con etiqueta en línea junto al input.
+- input (salvo radio/checkbox), select y textarea al 100 % de ancho con padding; botón Enviar reserva con padding amplio y colores de marca.
+
+Menú en fila:
+- #menu con display: flex, gap, sin viñetas (list-style: none) para mostrar Inicio, Tarifas y Reservas en una fila.
+
+Medición box-sizing en una tarjeta (DevTools > Computed, primera .tarjeta-servicio):
+- En el sitio publicado, con border-box global, el ancho total visible de la tarjeta sin width fijo coincide con el ancho de main (medí 640 px en una ventana de prueba local).
+- Para ver la diferencia entre modos, en la misma tarjeta fijé temporalmente width: 20rem con el padding y borde de la tarjeta: con box-sizing content-box el ancho total fue 356 px; con border-box 320 px (diferencia 36 px, el padding y el borde dejan de sumarse por fuera del width).
