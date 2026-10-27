@@ -230,3 +230,34 @@ Menú en fila:
 Medición box-sizing en una tarjeta (DevTools > Computed, primera .tarjeta-servicio):
 - En el sitio publicado, con border-box global, el ancho total visible de la tarjeta sin width fijo coincide con el ancho de main (medí 640 px en una ventana de prueba local).
 - Para ver la diferencia entre modos, en la misma tarjeta fijé temporalmente width: 20rem con el padding y borde de la tarjeta: con box-sizing content-box el ancho total fue 356 px; con border-box 320 px (diferencia 36 px, el padding y el borde dejan de sumarse por fuera del width).
+
+
+RETO 12: Lanzamiento v1.0
+
+Etiqueta Nuevo (bicicletas eléctricas):
+- Añadí un cuarto article en Inicio con h3 Bicicletas eléctricas y la misma estructura de tarjeta que los otros servicios.
+- Dentro del article puse un span con class="etiqueta-nueva" y el texto Nuevo.
+- En CSS: .tarjeta-servicio con position: relative y .etiqueta-nueva con position: absolute, top y right con --espacio-s, fondo Azul Noche y texto Crema para que se lea bien. La etiqueta queda en la esquina superior sin empujar la imagen ni el título.
+
+Enlace WhatsApp:
+- En las tres páginas (index.html, paginas/tarifas.html y paginas/reservas.html) añadí antes de cerrar body un enlace con texto WhatsApp, class="whatsapp-flotante", href https://wa.me/573000000000, target="_blank" y rel="noopener".
+- En CSS: position: fixed, bottom y right con --espacio-m, fondo Verde Ruta y texto blanco; en hover y focus pasa a Naranja Pedal con texto Azul Noche.
+- En body dejé padding-bottom: 4rem para que al bajar del todo el enlace no tape el footer.
+
+Organización de styles.css:
+- Reordené el archivo por bloques y puse comentarios encima de cada parte (variables, tamaño de cajas, cuerpo y títulos, main y portada, header y menú, tarjetas, botón reserva, tablas, formulario, whatsapp).
+
+Revisión antes de publicar:
+- Recorrí las tres páginas en Live Server: menú en fila, tarjetas, tablas, formulario y WhatsApp visible al hacer scroll.
+- En DevTools > Network filtré por Img: portada, bici y ruta responden 200 en local y en https://lezzier.github.io/rueda-libre/.
+- Repasé el teclado con Tab en menú, enlace WhatsApp y campos del formulario; el foco se ve con los outline del CSS.
+
+Resumen de lo que construí durante la semana:
+- Dejé el repositorio en GitHub con tres páginas enlazadas (Inicio, Tarifas, Reservas), formulario de reserva con validación y pruebas en la bitácora de los retos 6 y 7.
+- Publiqué la versión accesible en GitHub Pages (reto 8): idioma, títulos, textos alternativos, contraste de la paleta y mapa de uso de color.
+- Añadí la hoja de estilos con variables de marca, menú con página activa y estados (retos 9 y 10).
+- Ordené espaciado y lectura con box-sizing, main centrado, tarjetas, tablas y formulario (reto 11).
+- Cerré la v1.0 con la tarjeta de eléctricas, la etiqueta Nuevo y el acceso a WhatsApp siempre visible (reto 12).
+
+Lo que mejoraría después:
+-Trabajo mas autónomo, me apoyo mucho de la IA y me gustaria disminuirlo, hay partes del codigo que la ia me ayudo hacer, lo que si hice, fue que lei y entendi cada linea (no todo fue hecho con IA)

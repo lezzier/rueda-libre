@@ -1,3 +1,4 @@
+/* variables: colores, fuentes y tamaños */
 :root {
 --color-verde-ruta: #1E7A4F;
 --color-naranja-pedal: #F39A2B;
@@ -13,76 +14,19 @@
 --espacio-l: 2rem;
 }
 
+/* tamaño de cajas */
 * {
     box-sizing: border-box;
 }
 
+/* cuerpo de pagina, titulos y enlaces */
 body {
     font-family: var(--fuente-textos);
     color: var(--color-azul-noche);
     background-color: var(--color-crema);
     margin: 0;
     padding: var(--espacio-m);
-}
-
-main {
-    max-width: 40rem;
-    margin: auto;
-}
-
-.portada {
-    min-height: 70vh;
-}
-
-.tarjeta-servicio img {
-    width: 100%;
-    display: block;
-}
-
-.tarjeta-servicio {
-    padding: var(--espacio-m);
-    border: 0.125rem solid var(--color-naranja-pedal);
-    border-radius: 0.5rem;
-    margin-bottom: var(--espacio-m);
-    position: relative;
-}
-
-.etiqueta-nueva {
-    position: absolute;
-    top: var(--espacio-s);
-    right: var(--espacio-s);
-    background-color: var(--color-azul-noche);
-    color: var(--color-crema);
-    padding: var(--espacio-s) var(--espacio-m);
-    border-radius: 0.25rem;
-    font-weight: 600;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: var(--espacio-m);
-}
-
-caption {
-    margin-bottom: var(--espacio-s);
-    font-weight: 600;
-}
-
-th,
-td {
-    padding: var(--espacio-s) var(--espacio-m);
-    border: 0.0625rem solid var(--color-gris-asfalto);
-    text-align: left;
-}
-
-thead th {
-    background-color: var(--color-azul-noche);
-    color: var(--color-crema);
-}
-
-tbody th {
-    font-weight: 700;
+    padding-bottom: 4rem; 
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -92,9 +36,19 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
     color: var(--color-azul-noche);
-
 }
 
+/* main centrado con max-width y portada con vh */
+main {
+    max-width: 40rem;
+    margin: auto;
+}
+
+.portada {
+    min-height: 70vh;
+}
+
+/* header azul menu en fila y footer */
 header {
     background-color: var(--color-azul-noche);
     color: var(--color-naranja-pedal);
@@ -104,12 +58,6 @@ header {
 
 header a {
     color: var(--color-naranja-pedal);
-}
-
-footer {
-    color: var(--color-gris-asfalto);
-    margin-top: var(--espacio-l);
-    padding-top: var(--espacio-m);
 }
 
 #menu {
@@ -140,6 +88,38 @@ footer {
     outline-offset: 0.15rem;
 }
 
+footer {
+    color: var(--color-gris-asfalto);
+    margin-top: var(--espacio-l);
+    padding-top: var(--espacio-m);
+}
+
+/* tarjetas de servicios y el Nuevo en electricas */
+.tarjeta-servicio {
+    padding: var(--espacio-m);
+    border: 0.125rem solid var(--color-naranja-pedal);
+    border-radius: 0.5rem;
+    margin-bottom: var(--espacio-m);
+    position: relative;
+}
+
+.tarjeta-servicio img {
+    width: 100%;
+    display: block;
+}
+
+.etiqueta-nueva {
+    position: absolute;
+    top: var(--espacio-s);
+    right: var(--espacio-s);
+    background-color: var(--color-azul-noche);
+    color: var(--color-crema);
+    padding: var(--espacio-s) var(--espacio-m);
+    border-radius: 0.25rem;
+    font-weight: 600;
+}
+
+/* boton Reservar ahora */
 .boton-reserva {
     display: inline-block;
     padding: var(--espacio-s) var(--espacio-m);
@@ -157,6 +137,35 @@ footer {
     outline-offset: 0.15rem;
 }
 
+/* tablas en tarifas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: var(--espacio-m);
+}
+
+caption {
+    margin-bottom: var(--espacio-s);
+    font-weight: 600;
+}
+
+th,
+td {
+    padding: var(--espacio-s) var(--espacio-m);
+    border: 0.0625rem solid var(--color-gris-asfalto);
+    text-align: left;
+}
+
+thead th {
+    background-color: var(--color-azul-noche);
+    color: var(--color-crema);
+}
+
+tbody th {
+    font-weight: 700;
+}
+
+/* formulario reservas  */
 form fieldset {
     margin: 0 0 var(--espacio-l);
     padding: var(--espacio-m);
@@ -227,4 +236,21 @@ textarea:focus,
 button:focus {
     outline: 0.125rem solid var(--color-verde-ruta);
     outline-offset: 0.15rem;
+}
+
+/* whatsapp flotante */
+.whatsapp-flotante {
+    position: fixed;
+    bottom: var(--espacio-m);
+    right: var(--espacio-m);
+    background-color: var(--color-verde-ruta);
+    color: #ffffff;
+    padding: var(--espacio-s) var(--espacio-m);
+    text-decoration: none;
+}
+
+.whatsapp-flotante:hover,
+.whatsapp-flotante:focus {
+    background-color: var(--color-naranja-pedal);
+    color: var(--color-azul-noche);
 }
