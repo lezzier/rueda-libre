@@ -261,3 +261,11 @@ Resumen de lo que construí durante la semana:
 
 Lo que mejoraría después:
 -Trabajo mas autónomo, me apoyo mucho de la IA y me gustaria disminuirlo, hay partes del codigo que la ia me ayudo hacer, lo que si hice, fue que lei y entendi cada linea (no todo fue hecho con IA)
+
+
+SESION 4 - RETO 1
+
+En el encabezado: 
+- Ubique el nombre en un extremo y el menú en el otro, centrados
+
+
