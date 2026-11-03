@@ -1,0 +1,263 @@
+BITÁCORA - RUEDA LIBRE 
+
+NOTA DE REORGANIZACIÓN
+Esta bitácora la reorganicé el 25 de octubre de 2026. Mientras avanzaba con los retos no tenía claro cómo se lleva una bitácora ni cómo usar Git y GitHub, y por eso mis apuntes y mis commits quedaron desordenados, por lo que decidi acudir a la ayuda de una IA. Ahora cada entrada está bajo el reto al que corresponde y el texto está reescrito para que sea más claro. 
+
+
+RETO 1: El repositorio y la página base
+
+Petición del documento (DevTools > Network):
+- URL completa: http://127.0.0.1:5500/index.html
+- Protocolo: http
+- Host: 127.0.0.1
+- Puerto: 5500
+- Ruta: /index.html
+- Método: GET
+- Código de estado: 200
+
+Ruta que no existe:
+- URL: /promociones.html
+- Código: 404 (Not Found). Significa que el servidor no encontró el recurso porque no existe.
+
+Rol de cada lenguaje en el sitio:
+- HTML: la estructura y el contenido.
+  Ejemplo: el título principal y el párrafo de bienvenida.
+- CSS: el aspecto visual.
+  Ejemplo: poner el título en verde y centrado.
+- JavaScript: el comportamiento.
+  Ejemplo: un botón "Reserva" que muestra un mensaje al pulsarlo.
+
+
+RETO 4: Rueda Libre v0.1, un sitio navegable
+
+Tabla de rutas usadas al recorrer el sitio solo con el menú
+(página de origen -> destino -> ruta escrita en el enlace):
+
+Origen                  | Destino            | Ruta escrita
+index.html              | Inicio             | index.html
+index.html              | Tarifas y rutas    | paginas/tarifas.html
+index.html              | Recorridos         | paginas/tarifas.html#recorridos
+index.html              | Reservas           | paginas/reservas.html
+index.html              | Reservar ahora     | paginas/reservas.html
+paginas/tarifas.html    | Inicio             | ../index.html
+paginas/tarifas.html    | Tarifas y rutas    | tarifas.html
+paginas/tarifas.html    | Reservas           | reservas.html
+paginas/tarifas.html    | Reservar ahora     | reservas.html
+paginas/reservas.html   | Inicio             | ../index.html
+paginas/reservas.html   | Tarifas y rutas    | tarifas.html
+paginas/reservas.html   | Reservas           | reservas.html
+
+
+RETO 5: Estructura con significado
+
+Esquema de regiones de cada página (HTML semántico):
+
+Inicio
+- header: nombre del negocio y nav con Inicio, Tarifas y rutas, y Reservas.
+- main: secciones de presentación, quiénes somos, servicios, beneficios, cómo alquilar y ubicación.
+- Servicios: tres article (alquiler por horas, alquiler por día y recorridos guiados).
+- footer: nombre del negocio, correo y año.
+
+Tarifas
+- header: igual que en Inicio.
+- main: secciones de tarifas, recorridos e información adicional.
+- aside dentro de información adicional: lista de qué llevar.
+- footer: nombre del negocio, correo y año.
+
+Reservas
+- header: igual que en Inicio.
+- main: secciones de formulario de reserva y contacto.
+- Formulario: fieldsets "Tus datos", "Tu alquiler" y "Confirmación", con el botón "Enviar reserva".
+- aside: horario de atención en una lista de definiciones.
+- footer: nombre del negocio, correo y año.
+
+div y span que se quedan: No dejé ningún div ni span (revisé las tres páginas con búsqueda de "<div" y "<span").
+
+
+RETO 6: El formulario de reservas
+
+Controles elegidos y por qué:
+- Documento: campo de texto (no numérico) para conservar los ceros al inicio. Solo acepta de 6 a 10 números.
+- Tipo de bicicleta: botones de radio, porque solo se puede elegir una opción.
+- Plan y recorrido: listas desplegables, porque se elige una opción entre varias.
+
+Otros campos:
+- Nombre: mínimo 3 caracteres.
+- Correo: formato de email.
+- Celular: 10 números, empieza por 3.
+- Fecha: entre el 1 de noviembre y el 31 de diciembre de 2026.
+- Cantidad: de 1 a 6.
+- Comentarios: opcionales, máximo 300 caracteres.
+- Políticas: la casilla es obligatoria para poder enviar.
+
+
+RETO 7: Reservas sin errores (validación y teclado)
+
+Pruebas del formulario:
+
+Campo                  | Valor probado                                   | Esperaba                                          | Resultado
+Nombre                 | "Al" y "Ana"                                    | Rechazar el primero y aceptar el segundo          | Como se esperaba
+Documento              | 12345, 12A456 y 001234                          | Rechazar los dos primeros y aceptar el último     | Como se esperaba (mantuvo los ceros)
+Correo                 | anamail y ana@example.com                       | Rechazar el primero y aceptar el segundo          | Como se esperaba
+Celular                | 1234567890, 300123 y 3001234567                 | Rechazar los dos primeros y aceptar el último     | Como se esperaba
+Fecha                  | 2026-10-31, 2026-11-01, 2026-12-31, 2027-01-01  | Rechazar las fechas fuera del rango               | Como se esperaba
+Cantidad               | 0, 1, 6 y 7                                     | Aceptar solo del 1 al 6                           | Como se esperaba
+Bicicleta y plan       | Sin seleccionar y con una opción elegida        | Rechazar si falta una opción obligatoria          | Como se esperaba
+Políticas y comentarios| Casilla sin marcar y marcada; comentario de 301 caracteres | Exigir la aceptación y limitar los comentarios a 300 | Como se esperaba
+
+Prueba con teclado:
+- Con Tab desde "Nombre completo" llegué a "Número de documento"; con Shift+Tab volví a "Nombre completo".
+- Con Enter y los campos obligatorios vacíos, el navegador no envió el formulario.
+
+
+RETO 8: Rueda Libre v0.2 en línea (accesible y publicada)
+
+Auditoría de accesibilidad: hallazgos y correcciones
+1. Idioma, títulos y enlaces locales: en las tres páginas cada una tiene lang="es", un solo h1 y la jerarquía de encabezados sin saltos. Los href del menú y las rutas entre páginas coinciden con la tabla del Reto 4. No encontré enlaces locales rotos en el código.
+2. Textos alternativos en Inicio: los de la foto de los ciclistas y del mapa eran poco precisos. Los cambié para describir mejor lo que muestran (commit anterior).
+3. Textos de los enlaces (fuera de contexto): en Inicio usé frases como "Mira dónde estamos", "Ver tabla de recorridos", "Consulta nuestras tarifas", "Reservar ahora", "Ver en Google Maps" y "Contáctanos"; se entienden sin leer el párrafo completo. En Tarifas y Reservas el menú repite "Inicio", "Tarifas y rutas" y "Reservas"; el correo hola@ruedalibre.example es claro. El enlace "Rueda Libre" del header en Tarifas y Reservas lleva al inicio; en contexto de marca es comprensible.
+4. Textos alternativos en Tarifas y Reservas: en Tarifas la portada tiene alt="Bicicleta afuera del local Rueda Libre", coherente con la imagen. En Reservas no hay imágenes; no aplica revisar alt.
+5. Teclado: recorrí las tres páginas solo con Tab y Shift+Tab. El foco se ve en el menú (outline naranja), en los enlaces del contenido, en el botón "Reservar ahora" y en todos los campos del formulario (outline verde ruta). El orden del formulario es lógico.
+6. Hallazgo y corrección del menú (Reto 10): primero #menu a usaba Gris Asfalto y #menu a.activo Verde Ruta sobre Azul Noche; no cumplían el mapa ni el contraste. Lo corregí: enlaces del menú en Naranja Pedal sobre Azul Noche; la página actual (#menu a.activo) se distingue con negrita y subrayado; al pasar el mouse, Crema sobre Azul Noche.
+
+Contraste de la paleta (WCAG)
+Para texto normal se necesitan 4.5:1; para texto grande, 3:1.
+
+Combinación                       | Contraste | Clasificación
+Blanco sobre Verde Ruta           | 5.31:1    | Apta para texto normal
+Blanco sobre Naranja Pedal        | 2.22:1    | No apta para texto
+Azul Noche sobre Naranja Pedal    | 7.20:1    | Apta para texto normal
+Azul Noche sobre Crema            | 14.83:1   | Apta para texto normal
+Gris Asfalto sobre Crema          | 5.57:1    | Apta para texto normal
+Naranja Pedal sobre Crema         | 2.06:1    | No apta para texto
+Verde Ruta sobre Naranja Pedal    | 2.40:1    | No apta para texto
+Naranja Pedal sobre Azul Noche    | 7.20:1    | Apta para texto normal
+Verde Ruta sobre Crema            | 4.93:1    | Apta para texto normal
+Crema sobre Azul Noche            | 14.83:1   | Apta para texto normal (misma pareja que Azul Noche sobre Crema)
+Blanco sobre Azul Noche            | 15.97:1   | Apta para texto normal
+Gris Asfalto sobre Azul Noche     | 2.66:1    | No apta para texto (ya no la uso en el menú)
+Verde Ruta sobre Azul Noche       | 3.01:1    | No apta para texto normal (ya no la uso en el menú)
+
+Ninguna combinación quedó solo como apta para texto grande: las que pasan superan 4.5:1 y las que no pasan quedan por debajo de 3:1.
+
+Mapa de uso de color
+- Azul Noche sobre Crema: textos del cuerpo y enlaces del main.
+- Naranja Pedal sobre Azul Noche: fondo del header, h1 de Inicio, header a ("Rueda Libre" en Tarifas y Reservas) y enlaces del menú (#menu a).
+- Crema sobre Azul Noche: enlaces del menú en :hover.
+- Gris Asfalto sobre Crema: pie de página.
+- Blanco sobre Verde Ruta: botón "Reservar ahora" (.boton-reserva) en estado normal.
+- Azul Noche sobre Naranja Pedal: botón "Reservar ahora" en :hover y :focus.
+- Verde Ruta: solo como border-bottom del header, no como color de letra.
+- Página actual del menú: mismo color naranja que el resto, con font-weight 700 y text-decoration underline (#menu a.activo).
+- No uso Naranja Pedal sobre Crema, Blanco sobre Naranja Pedal ni Verde Ruta sobre Naranja Pedal en el contenido principal.
+
+Publicación en GitHub Pages
+- URL del sitio: https://lezzier.github.io/rueda-libre/ (también en la descripción del repositorio, About).
+- Verificación en la URL publicada (25-oct-2026): Inicio, paginas/tarifas.html y paginas/reservas.html responden 200; css/styles.css responde 200; las imágenes referenciadas cargan. El sitio en línea muestra la paleta, el menú con página activa y el botón "Reservar ahora" como en local.
+
+
+RETO 9: La identidad de Rueda Libre (hoja de estilos)
+
+Hoja de estilos y fuentes:
+- Creé css/styles.css y la enlacé en las tres páginas.
+- En index.html la ruta es css/styles.css.
+- En paginas/tarifas.html y paginas/reservas.html la ruta es ../css/styles.css, porque están un nivel más adentro.
+- Cargué Montserrat 700 y Open Sans 400 y 600 desde Google Fonts, antes de la hoja de estilos.
+- No hay estilos en línea ni etiquetas style.
+
+Variables en :root:
+- Colores: --color-verde-ruta, --color-naranja-pedal, --color-azul-noche, --color-crema, --color-gris-asfalto.
+- Fuentes: --fuente-titulos (Montserrat, Arial Black, sans-serif) y --fuente-textos (Open Sans, Arial, sans-serif).
+- Espaciado: --espacio-s 0.5rem, --espacio-m 1rem, --espacio-l 2rem.
+
+Herencia aplicada:
+- body: fuente de textos, color azul noche y fondo crema.
+- h1 a h6: fuente Montserrat con un selector agrupado; el color lo siguen heredando.
+- main: no tiene regla propia, hereda del body.
+- header: no puede heredar el fondo; es azul noche con letra naranja. Los enlaces del menú usan "header a" porque el navegador les pone un color propio.
+- footer: solo cambia el color a gris asfalto sobre el crema del body.
+- El verde ruta va en el border-bottom del header, no como color de letra.
+- Las combinaciones de color usadas son las del mapa de uso del Reto 8.
+
+DevTools (Styles y Computed) en el párrafo de bienvenida de Inicio:
+- Se hereda: color. El párrafo no tiene color propio; Computed muestra el mismo azul noche del body.
+- No se hereda: margin. El body tiene margin 0 y el párrafo tiene otro margen (el que pone el navegador por defecto). background-color tampoco se hereda: el párrafo queda transparente y se ve el crema del body detrás.
+
+
+RETO 10: Navegación con estados y sin conflictos
+
+Conflicto del menú (DevTools > Styles):
+Seleccioné el enlace con class="activo". El color verde (.activo) y el naranja (header a) aparecían tachados; el que se aplicaba era el gris de "#menu a".
+
+Especificidad de cada selector:
+
+Selector    | Especificidad | Resultado
+#menu a     | (1, 0, 1)     | Gana: un id y una etiqueta
+.activo     | (0, 1, 0)     | Pierde: solo una clase
+header a    | (0, 0, 2)     | Pierde: dos etiquetas
+a           | (0, 0, 1)     | Pierde: una etiqueta
+
+Causa: el id pesa más que la clase. Por eso .activo estaba en el HTML y en el CSS pero no se veía. El orden dentro del archivo no alcanza cuando los pesos son distintos.
+
+Solución: cambié .activo por "#menu a.activo", que pesa (1, 1, 1) y supera a "#menu a" porque suma una clase.
+Después, en el Reto 8, ajusté los colores del menú al mapa aprobado: todos los enlaces en Naranja Pedal sobre Azul Noche; el activo se distingue con negrita y subrayado (sin cambiar a verde ni gris). En :hover pasan a Crema sobre Azul Noche.
+
+
+RETO 11: Todo en su lugar (modelo de caja)
+
+box-sizing global:
+- Apliqué * { box-sizing: border-box; } para que width y max-width incluyan padding y borde en todas las cajas.
+
+Contenido principal y portada:
+- main con max-width: 40rem y margin: auto para centrar la columna de contenido en las tres páginas.
+- En index.html la primera sección lleva class="portada" y min-height: 70vh para que la portada ocupe al menos el 70 % del alto visible de la ventana.
+
+Tarjetas de servicios (Inicio):
+- Cada servicio es un article con class="tarjeta-servicio", con padding, borde naranja, border-radius y margin-bottom usando --espacio-m.
+- La imagen va dentro de cada tarjeta; .tarjeta-servicio img { width: 100%; display: block; }.
+
+Tablas (Tarifas):
+- table con width 100 % y border-collapse; padding y borde en th y td; thead th con fondo Azul Noche y texto Crema; tbody th en negrita.
+
+Formulario (Reservas):
+- fieldset con borde, padding y separación entre grupos; legend con fuente de títulos.
+- Etiquetas de campos de texto encima del control (label en bloque); radios y checkbox con etiqueta en línea junto al input.
+- input (salvo radio/checkbox), select y textarea al 100 % de ancho con padding; botón Enviar reserva con padding amplio y colores de marca.
+
+Menú en fila:
+- #menu con display: flex, gap, sin viñetas (list-style: none) para mostrar Inicio, Tarifas y Reservas en una fila.
+
+Medición box-sizing en una tarjeta (DevTools > Computed, primera .tarjeta-servicio):
+- En el sitio publicado, con border-box global, el ancho total visible de la tarjeta sin width fijo coincide con el ancho de main (medí 640 px en una ventana de prueba local).
+- Para ver la diferencia entre modos, en la misma tarjeta fijé temporalmente width: 20rem con el padding y borde de la tarjeta: con box-sizing content-box el ancho total fue 356 px; con border-box 320 px (diferencia 36 px, el padding y el borde dejan de sumarse por fuera del width).
+
+
+RETO 12: Lanzamiento v1.0
+
+Etiqueta Nuevo (bicicletas eléctricas):
+- Añadí un cuarto article en Inicio con h3 Bicicletas eléctricas y la misma estructura de tarjeta que los otros servicios.
+- Dentro del article puse un span con class="etiqueta-nueva" y el texto Nuevo.
+- En CSS: .tarjeta-servicio con position: relative y .etiqueta-nueva con position: absolute, top y right con --espacio-s, fondo Azul Noche y texto Crema para que se lea bien. La etiqueta queda en la esquina superior sin empujar la imagen ni el título.
+
+Enlace WhatsApp:
+- En las tres páginas (index.html, paginas/tarifas.html y paginas/reservas.html) añadí antes de cerrar body un enlace con texto WhatsApp, class="whatsapp-flotante", href https://wa.me/573000000000, target="_blank" y rel="noopener".
+- En CSS: position: fixed, bottom y right con --espacio-m, fondo Verde Ruta y texto blanco; en hover y focus pasa a Naranja Pedal con texto Azul Noche.
+- En body dejé padding-bottom: 4rem para que al bajar del todo el enlace no tape el footer.
+
+Organización de styles.css:
+- Reordené el archivo por bloques y puse comentarios encima de cada parte (variables, tamaño de cajas, cuerpo y títulos, main y portada, header y menú, tarjetas, botón reserva, tablas, formulario, whatsapp).
+
+Revisión antes de publicar:
+- Recorrí las tres páginas en Live Server: menú en fila, tarjetas, tablas, formulario y WhatsApp visible al hacer scroll.
+- En DevTools > Network filtré por Img: portada, bici y ruta responden 200 en local y en https://lezzier.github.io/rueda-libre/.
+- Repasé el teclado con Tab en menú, enlace WhatsApp y campos del formulario; el foco se ve con los outline del CSS.
+
+Resumen de lo que construí durante la semana:
+- Dejé el repositorio en GitHub con tres páginas enlazadas (Inicio, Tarifas, Reservas), formulario de reserva con validación y pruebas en la bitácora de los retos 6 y 7.
+- Publiqué la versión accesible en GitHub Pages (reto 8): idioma, títulos, textos alternativos, contraste de la paleta y mapa de uso de color.
+- Añadí la hoja de estilos con variables de marca, menú con página activa y estados (retos 9 y 10).
+- Ordené espaciado y lectura con box-sizing, main centrado, tarjetas, tablas y formulario (reto 11).
+- Cerré la v1.0 con la tarjeta de eléctricas, la etiqueta Nuevo y el acceso a WhatsApp siempre visible (reto 12).
+
+Lo que mejoraría después:
+-Trabajo mas autónomo, me apoyo mucho de la IA y me gustaria disminuirlo, hay partes del codigo que la ia me ayudo hacer, lo que si hice, fue que lei y entendi cada linea (no todo fue hecho con IA)
