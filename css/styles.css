@@ -129,6 +129,17 @@ footer {
     font-weight: 600;
 }
 
+/* flota de bicicletas */
+.flota {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+}
+
+.tarjeta-flota img{
+    width: 100%;
+    display: block;
+}
+
 /* boton Reservar ahora */
 .boton-reserva {
     display: inline-block;
