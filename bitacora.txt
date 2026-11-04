@@ -268,4 +268,7 @@ SESION 4 - RETO 1
 En el encabezado: 
 - Ubique el nombre en un extremo y el menú en el otro, centrados
 
+Al estrechar la ventana:
+- En el encabezado, el nombre sigue a un lado y el menú al otro. Los enlaces bajan de línea cuando ya no caben, y el nombre queda centrado en vertical con esas líneas.
+- En el pie, Marca, Contactos y Horarios empiezan en una fila. Al estrechar, un bloque baja a la línea siguiente y, si la ventana queda muy angosta, quedan uno debajo del otro, con el mismo espacio entre ellos.
 
