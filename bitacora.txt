@@ -263,7 +263,7 @@ Lo que mejoraría después:
 -Trabajo mas autónomo, me apoyo mucho de la IA y me gustaria disminuirlo, hay partes del codigo que la ia me ayudo hacer, lo que si hice, fue que lei y entendi cada linea (no todo fue hecho con IA)
 
 
-SESION 4 - RETO 1
+RETO 1 - SEMANA 2
 
 En el encabezado: 
 - Ubique el nombre en un extremo y el menú en el otro, centrados
@@ -271,4 +271,14 @@ En el encabezado:
 Al estrechar la ventana:
 - En el encabezado, el nombre sigue a un lado y el menú al otro. Los enlaces bajan de línea cuando ya no caben, y el nombre queda centrado en vertical con esas líneas.
 - En el pie, Marca, Contactos y Horarios empiezan en una fila. Al estrechar, un bloque baja a la línea siguiente y, si la ventana queda muy angosta, quedan uno debajo del otro, con el mismo espacio entre ellos.
+
+
+RETO 2 - SEMANA 2
+
+Cuadrícula de la flota, modo dispositivo de DevTools:
+
+- A 1280 px se ven 2 columnas.
+- A 900 px se ven 2 columnas.
+- A 500 px se ven 2 columnas.
+
 

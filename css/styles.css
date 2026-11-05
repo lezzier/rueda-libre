@@ -133,11 +133,25 @@ footer {
 .flota {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: var(--espacio-m);
 }
 
-.tarjeta-flota img{
+.tarjeta-flota {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--espacio-m);
+    border: 0.125rem solid var(--color-naranja-pedal);
+    border-radius: 0.5rem;
+}
+
+.tarjeta-flota img {
     width: 100%;
     display: block;
+}
+
+.tarjeta-flota .boton-reserva {
+    align-self: flex-start;
 }
 
 /* boton Reservar ahora */
