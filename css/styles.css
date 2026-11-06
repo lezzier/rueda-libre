@@ -19,6 +19,12 @@
     box-sizing: border-box;
 }
 
+/* imágenes fluidas: ninguna más ancha que su caja */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* cuerpo de pagina, titulos y enlaces */
 body {
     font-family: var(--fuente-textos);
@@ -46,8 +52,7 @@ main {
 
 .portada {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
+    grid-template-columns: 1fr;
     gap: var(--espacio-m);
     min-height: 70vh;
 }
@@ -60,7 +65,7 @@ main {
 
 .galeria-rutas {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: var(--espacio-m);
 }
 
@@ -79,9 +84,9 @@ main {
 /* header azul menu en fila y footer */
 header {
     display: flex;
-    justify-content: space-between;
-    align-items: center; 
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: var(--color-azul-noche);
     color: var(--color-naranja-pedal);
     padding: var(--espacio-m) var(--espacio-l);
@@ -95,6 +100,7 @@ header a {
 #menu {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     gap: var(--espacio-m);
     list-style: none;
@@ -123,9 +129,8 @@ header a {
 
 footer {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: flex-start;
-    flex-wrap: wrap;
     gap: var(--espacio-m);
     color: var(--color-gris-asfalto);
     margin-top: var(--espacio-l);
@@ -203,8 +208,7 @@ footer {
 /* reservas: formulario 2/3 y contacto 1/3 */
 .reserva-layout {
     display: grid;
-    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-    align-items: start;
+    grid-template-columns: 1fr;
     gap: var(--espacio-m);
 }
 
@@ -217,6 +221,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: var(--espacio-m);
+    font-size: 0.75rem;
 }
 
 caption {
@@ -226,9 +231,10 @@ caption {
 
 th,
 td {
-    padding: var(--espacio-s) var(--espacio-m);
+    padding: 0.25rem;
     border: 0.0625rem solid var(--color-gris-asfalto);
     text-align: left;
+    overflow-wrap: anywhere;
 }
 
 thead th {
@@ -260,13 +266,8 @@ form p {
 
 .campos-cortos {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    flex-direction: column;
     gap: var(--espacio-m);
-}
-
-.campos-cortos p {
-    flex: 1;
 }
 
 form label {
@@ -339,4 +340,64 @@ button:focus {
 .whatsapp-flotante:focus {
     background-color: var(--color-naranja-pedal);
     color: var(--color-azul-noche);
+}
+
+/* tablet: vuelve la fila del encabezado, el pie y las dos columnas */
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #menu {
+        justify-content: flex-start;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .portada {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    .galeria-rutas {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .reserva-layout {
+        grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+        align-items: start;
+    }
+
+    .campos-cortos {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    .campos-cortos p {
+        flex: 1;
+    }
+
+    table {
+        font-size: 1rem;
+    }
+
+    th,
+    td {
+        padding: var(--espacio-s) var(--espacio-m);
+    }
+}
+
+/* escritorio: las tres rutas en una sola fila */
+@media (min-width: 1200px) {
+    .galeria-rutas {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

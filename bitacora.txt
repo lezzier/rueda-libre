@@ -292,3 +292,17 @@ Elegí Grid cuando había que definir columnas a la vez (dos dimensiones) y Flex
 - Fila del formulario: Flexbox. Documento y celular solo van uno al lado del otro, en .campos-cortos. No hay una segunda fila que diseñar dentro de esa caja.
 - Encabezado: Flexbox. El nombre y el menú se reparten en una sola fila, cada uno en un extremo.
 - Pie: Flexbox. Marca, contacto y horario se reparten en una sola fila. Si no caben, bajan juntos gracias a flex-wrap.
+
+
+RETO 4 - SEMANA 2
+
+Mobile-first: lo que está fuera de @media es el celular, en una columna. Desde 768 px vuelve la fila del encabezado y del pie, la portada en dos columnas, reservas en 2fr y 1fr, y documento con celular en fila. Desde 1200 px las tres rutas quedan en una sola fila.
+
+Problemas que encontré y cómo los resolví:
+
+- En el celular la portada, la galería y reservas seguían en varias columnas, porque esas reglas estaban en la base. Las pasé a una sola columna y las devolví con @media (min-width: 768px) y, la galería de tres, con @media (min-width: 1200px).
+- Documento y celular en la misma fila no cabían a 300 px y empujaban la página a los lados. En la base quedaron en columna; la fila vuelve desde 768 px.
+- La tabla de tarifas, con el relleno y la letra de escritorio, no se leía completa en el celular. En la base bajé la letra a 0.75rem y el relleno de las celdas a 0.25rem, y dejé que el texto parta. Desde 768 px recuperan el tamaño anterior.
+- La imagen de beneficios tenía width 600 y se salía de la columna. Puse img { max-width: 100%; height: auto; } para que ninguna foto supere su caja.
+
+Pruebas en DevTools: a 360 px y a 300 px no hay scroll horizontal. A 768 px el encabezado ya es fila y la portada tiene dos columnas. A 1280 px las tres rutas están en una fila.
