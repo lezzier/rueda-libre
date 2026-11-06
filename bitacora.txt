@@ -282,3 +282,13 @@ Cuadrícula de la flota, modo dispositivo de DevTools:
 - A 500 px se ven 2 columnas.
 
 
+RETO 3 - SEMANA 2
+
+Elegí Grid cuando había que definir columnas a la vez (dos dimensiones) y Flexbox cuando solo había que repartir una fila (una dimensión).
+
+- Portada: Grid. Son dos columnas, texto y foto, con 1fr y 1fr. align-items: center deja el texto a media altura de la foto.
+- Galería Nuestras rutas: Grid. El boceto pide tres columnas iguales en una fila, con repeat(3, 1fr). El título queda fuera para no contar como celda.
+- Reservas: Grid. El formulario y el contacto son dos columnas en proporción 2fr y 1fr. align-items: start los pega arriba, porque el formulario es más alto.
+- Fila del formulario: Flexbox. Documento y celular solo van uno al lado del otro, en .campos-cortos. No hay una segunda fila que diseñar dentro de esa caja.
+- Encabezado: Flexbox. El nombre y el menú se reparten en una sola fila, cada uno en un extremo.
+- Pie: Flexbox. Marca, contacto y horario se reparten en una sola fila. Si no caben, bajan juntos gracias a flex-wrap.

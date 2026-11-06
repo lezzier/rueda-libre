@@ -45,7 +45,35 @@ main {
 }
 
 .portada {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--espacio-m);
     min-height: 70vh;
+}
+
+.portada img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.galeria-rutas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--espacio-m);
+}
+
+.tarjeta-ruta {
+    padding: var(--espacio-m);
+    border: 0.125rem solid var(--color-naranja-pedal);
+    border-radius: 0.5rem;
+}
+
+.tarjeta-ruta img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* header azul menu en fila y footer */
@@ -172,6 +200,18 @@ footer {
     outline-offset: 0.15rem;
 }
 
+/* reservas: formulario 2/3 y contacto 1/3 */
+.reserva-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    align-items: start;
+    gap: var(--espacio-m);
+}
+
+.reserva-contacto a {
+    overflow-wrap: anywhere;
+}
+
 /* tablas en tarifas */
 table {
     width: 100%;
@@ -216,6 +256,17 @@ form legend {
 
 form p {
     margin: 0 0 var(--espacio-m);
+}
+
+.campos-cortos {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: var(--espacio-m);
+}
+
+.campos-cortos p {
+    flex: 1;
 }
 
 form label {
