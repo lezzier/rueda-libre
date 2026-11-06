@@ -306,3 +306,14 @@ Problemas que encontré y cómo los resolví:
 - La imagen de beneficios tenía width 600 y se salía de la columna. Puse img { max-width: 100%; height: auto; } para que ninguna foto supere su caja.
 
 Pruebas en DevTools: a 360 px y a 300 px no hay scroll horizontal. A 768 px el encabezado ya es fila y la portada tiene dos columnas. A 1280 px las tres rutas están en una fila.
+
+
+RETO 1 - SEMANA 3
+
+Prototipo aparte, en nocturna/prototipo.html. No toqué el sitio de las semanas anteriores. La página carga Tailwind con el script del Play CDN (https://cdn.tailwindcss.com) y no tiene etiqueta style ni atributos style.
+
+La sección principal lleva la etiqueta "Nuevo · Jueves a sábado", un solo título (h1 "Rueda Nocturna"), el subtítulo, los datos "3 rutas" y "Desde $35.000", y el enlace "Inscríbete". El fondo es Azul Noche y el texto Crema, con los mismos códigos de la marca.
+
+El enlace "Inscríbete" parece un botón porque cada decisión visual es una clase suelta de Tailwind: inline-block para que el relleno forme una caja, rounded-md, bg-[#1E7A4F], px-6, py-3, font-semibold, uppercase, tracking-wide y text-white. Al pasar el mouse, hover:bg-[#F39A2B] y hover:text-[#14213D] cambian el fondo a Naranja Pedal y la letra a Azul Noche.
+
+En este proyecto, en la semana 2, el enlace "Reservar" no lo armé con Bootstrap. Lo armé con una sola clase propia, .boton-reserva, en css/styles.css: inline-block, relleno, fondo verde, texto blanco, sin subrayado y peso 600. Bootstrap es un framework de componentes: una clase como btn btn-primary trae junta la apariencia completa del botón. Tailwind es utility-first: no existe una clase "botón"; tú juntas las utilidades y el CDN las convierte en CSS.
