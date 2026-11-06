@@ -312,8 +312,17 @@ RETO 1 - SEMANA 3
 
 Prototipo aparte, en nocturna/prototipo.html. No toqué el sitio de las semanas anteriores. La página carga Tailwind con el script del Play CDN (https://cdn.tailwindcss.com) y no tiene etiqueta style ni atributos style.
 
-La sección principal lleva la etiqueta "Nuevo · Jueves a sábado", un solo título (h1 "Rueda Nocturna"), el subtítulo, los datos "3 rutas" y "Desde $35.000", y el enlace "Inscríbete". El fondo es Azul Noche y el texto Crema, con los mismos códigos de la marca.
+La sección principal lleva la etiqueta "Nuevo · Jueves a sábado", un solo título (h1 "Rueda Nocturna"), el subtítulo, los datos "3 rutas" y "Desde $55.000", y el enlace "Inscríbete". El fondo es Azul Noche y el texto Crema, con los mismos códigos de la marca.
+
+Usé las cuatro familias de utilidades que pide el reto:
+- Espaciado: px-6, py-16, space-y-6, m-0, px-6 y py-3 del enlace.
+- Tamaños: w-full, max-w-3xl, max-w-xl.
+- Colores: bg-[#14213D], text-[#FAF6EF], text-[#F39A2B], bg-[#1E7A4F], text-white.
+- Tipografía: text-sm, text-4xl, text-lg, font-semibold, font-bold, uppercase, tracking-widest, leading-tight, leading-relaxed.
 
 El enlace "Inscríbete" parece un botón porque cada decisión visual es una clase suelta de Tailwind: inline-block para que el relleno forme una caja, rounded-md, bg-[#1E7A4F], px-6, py-3, font-semibold, uppercase, tracking-wide y text-white. Al pasar el mouse, hover:bg-[#F39A2B] y hover:text-[#14213D] cambian el fondo a Naranja Pedal y la letra a Azul Noche.
 
-En este proyecto, en la semana 2, el enlace "Reservar" no lo armé con Bootstrap. Lo armé con una sola clase propia, .boton-reserva, en css/styles.css: inline-block, relleno, fondo verde, texto blanco, sin subrayado y peso 600. Bootstrap es un framework de componentes: una clase como btn btn-primary trae junta la apariencia completa del botón. Tailwind es utility-first: no existe una clase "botón"; tú juntas las utilidades y el CDN las convierte en CSS.
+Diferencia que vi entre un framework de componentes (Bootstrap) y utility-first (Tailwind), con el botón como ejemplo:
+- En Bootstrap el botón se construye con clases de componente ya armadas, por ejemplo btn btn-primary. Esa pareja trae junta forma, relleno, color y estado hover. Tú eliges el componente y lo ajustas poco.
+- En Tailwind no hay una clase "botón". El mismo enlace se construye juntando utilidades (inline-block, px-6, py-3, bg-[#1E7A4F], rounded-md, uppercase). Cada clase hace una sola cosa y el Play CDN las convierte en CSS.
+- En este proyecto, el enlace "Reservar" de la semana 2 no estaba en Bootstrap: era una clase propia .boton-reserva en css/styles.css. Ese enfoque se parece más a Bootstrap (una clase con todo el aspecto) que a Tailwind (muchas utilidades sueltas en el HTML).
