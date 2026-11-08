@@ -325,4 +325,11 @@ El enlace "Inscríbete" parece un botón porque cada decisión visual es una cla
 Diferencia que vi entre un framework de componentes (Bootstrap) y utility-first (Tailwind), con el botón como ejemplo:
 - En Bootstrap el botón se construye con clases de componente ya armadas, por ejemplo btn btn-primary. Esa pareja trae junta forma, relleno, color y estado hover. Tú eliges el componente y lo ajustas poco.
 - En Tailwind no hay una clase "botón". El mismo enlace se construye juntando utilidades (inline-block, px-6, py-3, bg-[#1E7A4F], rounded-md, uppercase). Cada clase hace una sola cosa y el Play CDN las convierte en CSS.
-- En este proyecto, el enlace "Reservar" de la semana 2 no estaba en Bootstrap: era una clase propia .boton-reserva en css/styles.css. Ese enfoque se parece más a Bootstrap (una clase con todo el aspecto) que a Tailwind (muchas utilidades sueltas en el HTML).
+
+RETO 2 - SEMANA 3
+
+Cuando busco en output.css una clase que tengo en mi codigo y otra que no 
+- La clase que tengo en mi codigo aparece en output
+- La clase que no tengo en mi codigo no aparece en output
+
+Esto se debe a que el codigo en output se va autoescribiendo a medida que se van agregando clases en html, por lo tanto cuando no tengo una clase en mi codigo, no hace parte del codigo de output
