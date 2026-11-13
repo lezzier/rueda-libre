@@ -346,9 +346,36 @@ KIT DE COMPONENTES - REGLAS VISUALES
 
 LANDING RUEDA NOCTURNA - ESTRUCTURA Y LAYOUT
 
-- Encabezado y pie comparten el mismo contenedor centrado que las secciones: max-w-7xl, w-full, mx-auto y px-6.
+- Encabezado, pie y secciones comparten el mismo contenedor centrado: max-w-7xl, w-full, mx-auto, con px-4 en móvil, sm:px-6 y lg:px-8.
 - El encabezado usa Flexbox para alinear la marca a un lado y la navegación con el botón al otro; en pantallas pequeñas se apila para conservar el espacio.
 - Las tres rutas usan Grid: una columna en móvil, dos en pantallas medianas y tres en escritorio.
 - Los cuatro pasos de "¿Cómo funciona?" usan Grid porque son elementos equivalentes que deben distribuirse en varias columnas y pasar a menos columnas cuando el ancho no alcanza.
 - La franja de inscripción usa Flexbox para separar el mensaje y la acción en escritorio y apilarlos en móvil.
 - Se reutilizaron las clases de botones y tarjetas de nocturna/componentes.html; solo cambian el contenido y los enlaces necesarios.
+
+LANDING RUEDA NOCTURNA - ADAPTACIÓN RESPONSIVE MOBILE-FIRST
+
+Revisión inicial en modo dispositivo a 360 px, antes de ajustar las clases:
+- El menú de secciones seguía visible en el celular y, junto al botón, ocupaba espacio en el encabezado; el encabezado quedaba alto (176 px en la medición).
+- El título principal usaba text-4xl también en móvil y se partía en aproximadamente cuatro líneas. La portada completa medía 871 px de alto.
+- Las secciones conservaban py-16 (64 px arriba y abajo) y px-6 (24 px a los lados), demasiado espacio para una pantalla angosta.
+- Las rutas y los pasos ya aparecían en una columna, y no había scroll horizontal (scrollWidth igual al ancho visible de 345 px en el navegador).
+
+Ajustes mobile-first:
+- Las clases sin prefijo definen el celular. El menú usa hidden y vuelve a mostrarse con md:flex; el botón de inscripción queda visible.
+- El encabezado se apila en móvil y usa md:flex-row desde 768 px.
+- Las rutas usan grid-cols-1, sm:grid-cols-2 y lg:grid-cols-3 (640 px y 1024 px); los pasos usan grid-cols-1, sm:grid-cols-2 y lg:grid-cols-4.
+- Reduje tipografía y rellenos en móvil y los aumenté progresivamente con sm:, md: y lg:. La portada también pasa a dos columnas desde md.
+
+Pruebas en navegador con viewport de dispositivo:
+
+Ancho | Encabezado | Navegación | Columnas de rutas | Columnas de pasos | Scroll horizontal
+------|------------|------------|-------------------|-------------------|------------------
+360 px | Apilado | Oculta; botón visible | 1 | 1 | No
+768 px | En fila | Visible | 2 | 2 | No
+1024 px | En fila | Visible | 3 | 4 | No
+1280 px | En fila | Visible | 3 | 4 | No
+
+En cada ancho comprobé el número efectivo de columnas leyendo el layout calculado del navegador y comparé el ancho desplazable con el ancho visible. En móvil el contenido queda en una columna; las columnas adicionales aparecen al alcanzar sus breakpoints.
+
+También comprobé los límites de los breakpoints: a 639 px las rutas y los pasos tienen una columna; a 640 px pasan a dos. A 1023 px se mantienen en dos y a 1024 px las rutas pasan a tres columnas y los pasos a cuatro.
