@@ -333,3 +333,13 @@ Cuando busco en output.css una clase que tengo en mi codigo y otra que no
 - La clase que no tengo en mi codigo no aparece en output
 
 Esto se debe a que el codigo en output se va autoescribiendo a medida que se van agregando clases en html, por lo tanto cuando no tengo una clase en mi codigo, no hace parte del codigo de output
+
+KIT DE COMPONENTES - REGLAS VISUALES
+
+- Radio de borde: rounded-xl para botones, tarjetas, etiquetas, alertas y campos.
+- Espaciado: usar la escala de Tailwind en múltiplos de 0.25rem (por ejemplo, gap-4, p-4, p-5 y p-6); mantener las mismas utilidades en componentes equivalentes.
+- Colores de marca: Azul Noche (#14213D) como fondo, Crema (#FAF6EF) para texto, Naranja Pedal (#F39A2B) para acentos y Verde Ruta para acciones principales. La tarjeta usa un tono más claro de Azul Noche.
+- Alertas: conservar la paleta de marca y reservar azul para información, verde para éxito y ámbar para advertencia; cada estado también se identifica con su título.
+- Interacción: botones y tarjetas tienen hover; enlaces y campos muestran foco con anillo visible. Los estados de foco no dependen solo del color.
+- Bordes y sombras: bordes sutiles en tarjetas y campos; las tarjetas elevan la sombra en hover sin cambiar su tamaño.
+- Sin CSS propio: la página de componentes y la página nocturna se estilizan con utilidades Tailwind compiladas en nocturna/src/output.css.

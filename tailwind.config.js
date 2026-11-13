@@ -1,9 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./nocturna/index.html"],
+  content: ["./nocturna/**/*.html"],
   theme: {
     extend: {},
   },
   plugins: [],
 }
-
