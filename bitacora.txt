@@ -343,3 +343,12 @@ KIT DE COMPONENTES - REGLAS VISUALES
 - Interacción: botones y tarjetas tienen hover; enlaces y campos muestran foco con anillo visible. Los estados de foco no dependen solo del color.
 - Bordes y sombras: bordes sutiles en tarjetas y campos; las tarjetas elevan la sombra en hover sin cambiar su tamaño.
 - Sin CSS propio: la página de componentes y la página nocturna se estilizan con utilidades Tailwind compiladas en nocturna/src/output.css.
+
+LANDING RUEDA NOCTURNA - ESTRUCTURA Y LAYOUT
+
+- Encabezado y pie comparten el mismo contenedor centrado que las secciones: max-w-7xl, w-full, mx-auto y px-6.
+- El encabezado usa Flexbox para alinear la marca a un lado y la navegación con el botón al otro; en pantallas pequeñas se apila para conservar el espacio.
+- Las tres rutas usan Grid: una columna en móvil, dos en pantallas medianas y tres en escritorio.
+- Los cuatro pasos de "¿Cómo funciona?" usan Grid porque son elementos equivalentes que deben distribuirse en varias columnas y pasar a menos columnas cuando el ancho no alcanza.
+- La franja de inscripción usa Flexbox para separar el mensaje y la acción en escritorio y apilarlos en móvil.
+- Se reutilizaron las clases de botones y tarjetas de nocturna/componentes.html; solo cambian el contenido y los enlaces necesarios.
