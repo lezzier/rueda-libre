@@ -4,76 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kit de componentes | Rueda Nocturna</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="./src/output.css" rel="stylesheet">
 </head>
-<body class="bg-[#14213D] text-[#FAF6EF]">
+<body class="bg-crema font-open-sans text-azul-noche dark:bg-azul-noche dark:text-crema">
     <main class="mx-auto w-full max-w-3xl space-y-12 px-6 py-16">
         <header id="inicio" class="space-y-4">
-            <p class="text-sm font-semibold uppercase tracking-widest text-[#F39A2B]">Rueda Nocturna</p>
-            <h1 class="text-4xl font-bold leading-tight">Kit de componentes</h1>
-            <p class="max-w-xl text-lg leading-relaxed text-[#B8C2D6]">Botones, tarjeta, alertas y campos de formulario con una misma identidad visual.</p>
+            <p class="font-montserrat text-sm font-semibold uppercase tracking-widest text-azul-noche dark:text-amarillo-farol">Rueda Nocturna</p>
+            <h1 class="font-montserrat text-4xl font-bold leading-tight">Kit de componentes</h1>
+            <p class="max-w-xl text-lg leading-relaxed text-gris-asfalto dark:text-crema">Botones, tarjeta, alertas y campos de formulario con una misma identidad visual.</p>
         </header>
 
         <section aria-labelledby="botones-titulo" class="space-y-4">
-            <h2 id="botones-titulo" class="text-2xl font-bold">Botones</h2>
+            <h2 id="botones-titulo" class="font-montserrat text-2xl font-bold">Botones</h2>
             <div class="flex flex-wrap gap-4">
-                <a href="./index.html" class="inline-block rounded-xl border border-orange-500 bg-transparent px-6 py-3 font-semibold uppercase tracking-wide text-orange-500 no-underline transition-all duration-300 hover:bg-orange-500 hover:text-white hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-orange-200 focus:ring-offset-2 focus:ring-offset-[#14213D]">Inicio</a>
-                <a href="#rutas" class="inline-block rounded-xl bg-orange-700 px-6 py-3 text-base font-bold uppercase tracking-wide text-white no-underline transition-all duration-300 hover:bg-orange-500 hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-orange-200 focus:ring-offset-2 focus:ring-offset-[#14213D]">Ver rutas</a>
-                <a href="../paginas/reservas.html" class="inline-block rounded-xl bg-green-700 px-6 py-3 text-base font-semibold uppercase tracking-wide text-white no-underline transition-all duration-300 hover:bg-green-500 hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-green-200 focus:ring-offset-2 focus:ring-offset-[#14213D]">Inscríbete</a>
+                <a href="./index.html" class="inline-block rounded-xl border border-naranja-pedal bg-transparent px-6 py-3 font-semibold uppercase tracking-wide text-azul-noche no-underline transition-all duration-300 hover:bg-amarillo-farol hover:text-azul-noche hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-amarillo-farol focus:ring-offset-2 focus:ring-offset-crema dark:text-amarillo-farol dark:focus:ring-offset-azul-noche">Inicio</a>
+                <a href="#rutas" class="inline-block rounded-xl bg-naranja-pedal px-6 py-3 text-base font-bold uppercase tracking-wide text-azul-noche no-underline transition-all duration-300 hover:bg-amarillo-farol hover:text-azul-noche hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-amarillo-farol focus:ring-offset-2 focus:ring-offset-crema dark:focus:ring-offset-azul-noche">Ver rutas</a>
+                <a href="../paginas/reservas.html" class="inline-block rounded-xl bg-verde-ruta px-6 py-3 text-base font-semibold uppercase tracking-wide text-white no-underline transition-all duration-300 hover:bg-amarillo-farol hover:text-azul-noche hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-amarillo-farol focus:ring-offset-2 focus:ring-offset-crema dark:focus:ring-offset-azul-noche">Inscríbete</a>
             </div>
         </section>
 
         <section id="rutas" aria-labelledby="tarjeta-titulo" class="space-y-4">
-            <h2 id="tarjeta-titulo" class="text-2xl font-bold">Tarjeta de ruta</h2>
-            <article class="overflow-hidden rounded-xl border border-white/10 bg-[#1D2D50] shadow-md transition-all duration-300 hover:border-orange-400 hover:shadow-xl">
+            <h2 id="tarjeta-titulo" class="font-montserrat text-2xl font-bold">Tarjeta de ruta</h2>
+            <article class="overflow-hidden rounded-xl border border-gris-asfalto/30 bg-white text-azul-noche shadow-md transition-all duration-300 hover:border-naranja-pedal hover:shadow-xl dark:border-crema/20 dark:bg-gris-asfalto dark:text-crema">
                 <img src="../img/luces-del-centro.png" alt="Mapa del recorrido Luces del Centro" class="h-64 w-full object-cover">
                 <div class="space-y-4 p-5">
-                    <span class="inline-block rounded-xl bg-green-900 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-green-200">Nivel: Fácil</span>
-                    <h3 class="text-2xl font-bold">Luces del Centro</h3>
-                    <ul class="divide-y divide-white/10">
-                        <li class="flex items-baseline justify-between gap-4 py-3"><span class="text-sm text-[#B8C2D6]">Distancia</span><span class="font-semibold">10 km</span></li>
-                        <li class="flex items-baseline justify-between gap-4 py-3"><span class="text-sm text-[#B8C2D6]">Duración</span><span class="font-semibold">2 h</span></li>
-                        <li class="flex items-baseline justify-between gap-4 py-3"><span class="text-sm text-[#B8C2D6]">Punto de encuentro</span><span class="text-right font-semibold">Sede Rueda Libre</span></li>
+                    <span class="inline-block rounded-xl bg-verde-ruta px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white">Nivel: Fácil</span>
+                    <h3 class="font-montserrat text-2xl font-bold">Luces del Centro</h3>
+                    <ul class="divide-y divide-gris-asfalto/20 dark:divide-crema/20">
+                        <li class="flex items-baseline justify-between gap-4 py-3"><span class="text-sm text-gris-asfalto dark:text-crema">Distancia</span><span class="font-semibold">10 km</span></li>
+                        <li class="flex items-baseline justify-between gap-4 py-3"><span class="text-sm text-gris-asfalto dark:text-crema">Duración</span><span class="font-semibold">2 h</span></li>
+                        <li class="flex items-baseline justify-between gap-4 py-3"><span class="text-sm text-gris-asfalto dark:text-crema">Punto de encuentro</span><span class="text-right font-semibold">Sede Rueda Libre</span></li>
                     </ul>
-                    <p class="text-sm leading-relaxed text-[#B8C2D6]">Incluye bicicleta, casco, luces LED, chaleco reflectivo y guía.</p>
+                    <p class="text-sm leading-relaxed text-gris-asfalto dark:text-crema">Incluye bicicleta, casco, luces LED, chaleco reflectivo y guía.</p>
                     <div class="flex flex-wrap items-center justify-between gap-4">
-                        <span class="text-2xl font-bold text-orange-300">$55.000</span>
-                        <a href="../paginas/reservas.html" class="inline-block rounded-xl bg-green-700 px-6 py-3 text-base font-semibold uppercase tracking-wide text-white no-underline transition-all duration-300 hover:bg-green-500 hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-green-200 focus:ring-offset-2 focus:ring-offset-[#1D2D50]">Inscríbete</a>
+                        <span class="text-2xl font-bold text-azul-noche dark:text-crema">$55.000</span>
+                        <a href="../paginas/reservas.html" class="inline-block rounded-xl bg-verde-ruta px-6 py-3 text-base font-semibold uppercase tracking-wide text-white no-underline transition-all duration-300 hover:bg-amarillo-farol hover:text-azul-noche hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-amarillo-farol focus:ring-offset-2 focus:ring-offset-gris-asfalto">Inscríbete</a>
                     </div>
                 </div>
             </article>
         </section>
 
         <section aria-labelledby="alertas-titulo" class="space-y-4">
-            <h2 id="alertas-titulo" class="text-2xl font-bold">Alertas</h2>
+            <h2 id="alertas-titulo" class="font-montserrat text-2xl font-bold">Alertas</h2>
             <div class="space-y-4">
-                <aside class="rounded-xl border-l-4 border-blue-400 bg-blue-900/40 p-4" role="note">
-                    <h3 class="font-bold text-blue-200">Información</h3>
-                    <p class="mt-1 text-sm leading-relaxed text-[#FAF6EF]">Las rutas nocturnas salen desde la sede de Rueda Libre.</p>
+                <aside class="rounded-xl border-l-4 border-azul-noche bg-azul-noche p-4 text-crema dark:border-amarillo-farol dark:bg-azul-noche" role="note">
+                    <h3 class="font-montserrat font-bold text-amarillo-farol">Información</h3>
+                    <p class="mt-1 text-sm leading-relaxed text-crema">Las rutas nocturnas salen desde la sede de Rueda Libre.</p>
                 </aside>
-                <aside class="rounded-xl border-l-4 border-green-400 bg-green-900/40 p-4" role="status" aria-live="polite">
-                    <h3 class="font-bold text-green-200">Inscripción confirmada</h3>
-                    <p class="mt-1 text-sm leading-relaxed text-[#FAF6EF]">Tu cupo para la ruta quedó reservado.</p>
+                <aside class="rounded-xl border-l-4 border-verde-ruta bg-verde-ruta p-4 text-white" role="status" aria-live="polite">
+                    <h3 class="font-montserrat font-bold text-white">Inscripción confirmada</h3>
+                    <p class="mt-1 text-sm leading-relaxed text-white">Tu cupo para la ruta quedó reservado.</p>
                 </aside>
-                <aside class="rounded-xl border-l-4 border-amber-400 bg-amber-900/40 p-4" role="alert">
-                    <h3 class="font-bold text-amber-200">Advertencia</h3>
-                    <p class="mt-1 text-sm leading-relaxed text-[#FAF6EF]">Llega 15 minutos antes de la hora de salida.</p>
+                <aside class="rounded-xl border-l-4 border-amarillo-farol bg-amarillo-farol p-4 text-azul-noche" role="alert">
+                    <h3 class="font-montserrat font-bold text-azul-noche">Advertencia</h3>
+                    <p class="mt-1 text-sm leading-relaxed text-azul-noche">Llega 15 minutos antes de la hora de salida.</p>
                 </aside>
             </div>
         </section>
 
         <section aria-labelledby="campos-titulo" class="space-y-4">
-            <h2 id="campos-titulo" class="text-2xl font-bold">Campos de formulario</h2>
+            <h2 id="campos-titulo" class="font-montserrat text-2xl font-bold">Campos de formulario</h2>
             <div class="space-y-5">
                 <div class="space-y-2">
                     <label for="correo" class="block text-sm font-semibold">Correo electrónico</label>
-                    <input id="correo" name="correo" type="email" autocomplete="email" placeholder="nombre@ejemplo.com" aria-describedby="correo-ayuda" class="w-full rounded-xl border border-white/20 bg-[#1D2D50] px-4 py-3 text-[#FAF6EF] placeholder:text-[#B8C2D6] focus:outline-none focus:ring-2 focus:ring-green-200 focus:ring-offset-2 focus:ring-offset-[#14213D]">
-                    <p id="correo-ayuda" class="text-sm text-[#B8C2D6]">Te enviaremos aquí la confirmación de tu ruta.</p>
+                    <input id="correo" name="correo" type="email" autocomplete="email" placeholder="nombre@ejemplo.com" aria-describedby="correo-ayuda" class="w-full rounded-xl border border-gris-asfalto/40 bg-white px-4 py-3 text-azul-noche placeholder:text-gris-asfalto focus:outline-none focus:ring-2 focus:ring-amarillo-farol focus:ring-offset-2 focus:ring-offset-crema dark:border-crema/30 dark:bg-gris-asfalto dark:text-crema dark:placeholder:text-crema dark:focus:ring-offset-azul-noche">
+                    <p id="correo-ayuda" class="text-sm text-gris-asfalto dark:text-crema">Te enviaremos aquí la confirmación de tu ruta.</p>
                 </div>
                 <div class="space-y-2">
                     <label for="celular" class="block text-sm font-semibold">Celular</label>
-                    <input id="celular" name="celular" type="tel" autocomplete="tel" inputmode="tel" placeholder="300 123 4567" aria-describedby="celular-ayuda" class="w-full rounded-xl border border-white/20 bg-[#1D2D50] px-4 py-3 text-[#FAF6EF] placeholder:text-[#B8C2D6] focus:outline-none focus:ring-2 focus:ring-green-200 focus:ring-offset-2 focus:ring-offset-[#14213D]">
-                    <p id="celular-ayuda" class="text-sm text-[#B8C2D6]">Escribe un número donde podamos contactarte.</p>
+                    <input id="celular" name="celular" type="tel" autocomplete="tel" inputmode="tel" placeholder="300 123 4567" aria-describedby="celular-ayuda" class="w-full rounded-xl border border-gris-asfalto/40 bg-white px-4 py-3 text-azul-noche placeholder:text-gris-asfalto focus:outline-none focus:ring-2 focus:ring-amarillo-farol focus:ring-offset-2 focus:ring-offset-crema dark:border-crema/30 dark:bg-gris-asfalto dark:text-crema dark:placeholder:text-crema dark:focus:ring-offset-azul-noche">
+                    <p id="celular-ayuda" class="text-sm text-gris-asfalto dark:text-crema">Escribe un número donde podamos contactarte.</p>
                 </div>
             </div>
         </section>

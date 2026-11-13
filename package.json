@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "tailwindcss -i ./nocturna/src/input.css -o ./nocturna/src/output.css --watch"
+    "watch": "@tailwindcss/cli -i ./nocturna/src/input.css -o ./nocturna/src/output.css --watch"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/lezzier/rueda-libre#readme",
   "devDependencies": {
-    "tailwindcss": "^3.4.19"
+    "@tailwindcss/cli": "^4.3.5",
+    "tailwindcss": "^4.3.5"
   }
 }

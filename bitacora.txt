@@ -379,3 +379,31 @@ Ancho | Encabezado | Navegación | Columnas de rutas | Columnas de pasos | Scrol
 En cada ancho comprobé el número efectivo de columnas leyendo el layout calculado del navegador y comparé el ancho desplazable con el ancho visible. En móvil el contenido queda en una columna; las columnas adicionales aparecen al alcanzar sus breakpoints.
 
 También comprobé los límites de los breakpoints: a 639 px las rutas y los pasos tienen una columna; a 640 px pasan a dos. A 1023 px se mantienen en dos y a 1024 px las rutas pasan a tres columnas y los pasos a cuatro.
+
+TEMA DE MARCA Y MODO OSCURO - RUEDA NOCTURNA
+
+- En nocturna/src/input.css definí con @theme los seis colores de marca (Verde Ruta, Naranja Pedal, Azul Noche, Crema, Gris Asfalto y Amarillo Farol) y las familias Montserrat y Open Sans, cargadas desde Google Fonts.
+- La landing y componentes.html usan utilidades con estos nombres; el texto general usa Open Sans y los encabezados Montserrat. No quedan colores genéricos de Tailwind en esas dos páginas.
+- El modo claro conserva el fondo Crema, texto Azul Noche y tarjetas blancas. Con la variante dark: basada en prefers-color-scheme, el fondo cambia a Azul Noche, las tarjetas y campos a Gris Asfalto y los textos a Crema. El estado se adapta a la preferencia del sistema, sin selector manual.
+
+Contraste WCAG AA para texto normal (mínimo 4.5:1):
+
+Combinación usada                         | Contraste | Uso
+------------------------------------------|-----------|----------------------------------------------
+Azul Noche sobre Crema                    | 14.83:1   | Texto principal en modo claro
+Gris Asfalto sobre Crema                  | 5.57:1    | Texto secundario en modo claro
+Crema sobre Gris Asfalto                  | 5.57:1    | Texto en tarjetas y campos oscuros
+Naranja Pedal sobre Azul Noche            | 7.20:1    | Acento de inscripción
+Azul Noche sobre Naranja Pedal            | 7.20:1    | Botón "Ver rutas"
+Azul Noche sobre Amarillo Farol           | 11.08:1   | Etiquetas y estados de interacción
+Blanco sobre Verde Ruta                   | 5.31:1    | Botones, nivel fácil y alerta de éxito
+Crema sobre Verde Ruta                    | 4.93:1    | Combinación de reserva de la paleta
+
+Combinaciones descartadas:
+- Verde Ruta sobre Azul Noche da 3.01:1 y no cumple para texto normal; los botones verdes usan texto blanco (5.31:1), no texto verde sobre azul.
+- Amarillo Farol sobre Gris Asfalto da 4.16:1 y no cumple; el amarillo se usa como texto sobre Azul Noche (11.08:1), o como fondo con texto Azul Noche.
+- Naranja Pedal sobre Crema da 2.06:1; en fondo claro se usa texto Azul Noche sobre el acento naranja.
+
+Prueba del modo oscuro:
+- Emulé prefers-color-scheme: light y dark en el navegador (DevTools/Chromium), en la landing y en componentes.html.
+- Confirmé el cambio calculado de fondo, tarjetas, alertas, campos y texto, y revisé las combinaciones visibles con el umbral 4.5:1. En ambos modos, el análisis de texto visible no encontró combinaciones por debajo de ese mínimo.
