@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tailwindcss -i ./nocturna/src/input.css -o ./nocturna/src/output.css --minify",
     "watch": "@tailwindcss/cli -i ./nocturna/src/input.css -o ./nocturna/src/output.css --watch"
   },
   "repository": {

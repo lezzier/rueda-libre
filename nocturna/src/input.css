@@ -12,3 +12,17 @@
   --font-montserrat: "Montserrat", "Arial Black", sans-serif;
   --font-open-sans: "Open Sans", Arial, sans-serif;
 }
+
+@layer components {
+  .boton {
+    @apply inline-block rounded-xl px-6 py-3 text-base font-semibold uppercase tracking-wide no-underline transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-amarillo-farol focus:ring-offset-2;
+  }
+
+  .boton-verde {
+    @apply bg-verde-ruta text-white hover:bg-amarillo-farol hover:text-azul-noche;
+  }
+
+  .boton-naranja {
+    @apply bg-naranja-pedal font-bold text-azul-noche hover:bg-amarillo-farol hover:text-azul-noche;
+  }
+}

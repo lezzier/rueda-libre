@@ -407,3 +407,39 @@ Combinaciones descartadas:
 Prueba del modo oscuro:
 - Emulé prefers-color-scheme: light y dark en el navegador (DevTools/Chromium), en la landing y en componentes.html.
 - Confirmé el cambio calculado de fondo, tarjetas, alertas, campos y texto, y revisé las combinaciones visibles con el umbral 4.5:1. En ambos modos, el análisis de texto visible no encontró combinaciones por debajo de ese mínimo.
+
+RETO 8 SEMANA 3
+
+Inventario de clases repetidas en nocturna/index.html (antes de extraer los estilos de los botones):
+
+Elemento o lista de clases                                      | Veces
+---------------------------------------------------------------|------
+text-sm text-gris-asfalto dark:text-crema                      | 11
+flex items-baseline justify-between gap-4 py-3                 | 9
+space-y-3                                                     | 7
+font-semibold                                                 | 6
+text-sm font-bold uppercase tracking-widest text-azul-noche dark:text-amarillo-farol | 4
+overflow-hidden rounded-xl border border-gris-asfalto/30 bg-white shadow-md transition-all duration-300 hover:border-naranja-pedal hover:shadow-xl dark:border-crema/20 dark:bg-gris-asfalto | 3
+Imagen de tarjeta (h-64 w-full object-cover)                   | 3
+Contenedor interior de tarjeta (space-y-4 p-5)                | 3
+Insignias de nivel                                             | 3
+
+Los seis enlaces de acción repetían el patrón de botón (cinco verdes y uno naranja). Tras el cambio, .boton boton-verde aparece cinco veces y .boton boton-naranja una vez. La landing no tiene campos de formulario. Creé tres clases propias dentro de @layer components en nocturna/src/input.css: .boton, .boton-verde y .boton-naranja. Las seis acciones las usan; las tarjetas conservan las clases del kit y la misma estructura. Ordené las utilidades por layout, espaciado, tipografía, color y estados, agrupando también los breakpoints responsive.
+
+Build y medición de Tailwind:
+- Tamaño del CSS minificado en disco: 22.378 bytes.
+- En la petición de la landing, Resource Timing del navegador registró 22.678 bytes transferidos en total y 22.378 bytes de cuerpo codificado (datos equivalentes a Size/Transferred en Network).
+- Verifiqué la adaptación en 360 px (una columna de rutas y pasos), 768 px (dos y dos) y 1024 px (tres rutas y cuatro pasos), sin desbordamiento horizontal. También comprobé fondo, tarjetas, texto y botones en los modos claro y oscuro.
+
+Comparativa Bootstrap y Tailwind:
+
+Criterio             | Bootstrap                                                | Tailwind
+---------------------|----------------------------------------------------------|-----------------------------------------------------------
+Curva de aprendizaje | Sus clases de componente, como btn btn-primary, permiten | Hay que conocer y combinar utilidades; en esta landing, el patrón de seis botones se simplificó con tres clases propias.
+                     | empezar rápido con patrones conocidos.                   |
+Personalización      | Conveniente para mantener componentes estándar; una      | En esta versión pude definir seis colores de marca en     |
+                     | identidad muy distinta puede requerir ajustes adicionales.| @theme y combinar responsive y dark: en el mismo marcado. |
+Casos de uso         | Buena opción para sitios con patrones convencionales y    | Encaja con una landing de marca propia y estados          |
+                     | necesidad de montar componentes rápidamente.             | responsive/oscuro ajustados al diseño.                    |
+
+
