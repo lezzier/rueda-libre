@@ -459,3 +459,14 @@ Presentación y temas:
 - En claro, fondo crema y controles blancos. En oscuro, fondo Azul Noche, grupos y controles Gris Asfalto, texto Crema. El foco usa anillo visible.
 
 Tiempo real: inicio 16:13:50 fin 17:27:21 duración 1 h 13 min 31 s. Se superó el límite previsto de 40 minutos por 33 min 31 s.
+
+RETO 10 SEMANA 3 
+
+- Agregué Bootstrap 5.3.3 por CDN a Inicio, Tarifas y Reservas. La navbar responsive permite abrir Rueda Nocturna desde cualquiera de las tres páginas.
+- En Inicio reemplacé la portada por un carrusel Bootstrap de cuatro diapositivas. La cuarta promociona Rueda Nocturna y enlaza a nocturna/index.html.
+- Desde la landing, el enlace de marca vuelve a ../index.html y el botón "Reserva tu bici" lleva a ../paginas/reservas.html.
+- Definí las variables --bs-primary #1E7A4F, --bs-secondary #F39A2B, --bs-dark #14213D, --bs-light #FAF6EF, --bs-gray #5B6470 y --bs-warning #FFD166. Coinciden con los seis colores de @theme en Tailwind 4.3.5. Bootstrap usa Open Sans para el cuerpo y Montserrat para títulos, igual que la landing.
+- El pie de la landing comparte con las páginas principales hola@ruedalibre.example y +57 300 000 0000.
+- En local comprobé que Inicio, Tarifas, Reservas, la landing y sus hojas CSS responden 200; los cuatro recursos de imagen del carrusel cargan. Confirmé también que las rutas relativas de navbar, carrusel, regreso y reserva resuelven a páginas 200.
+- En GitHub Pages las rutas publicadas de Inicio, Tarifas, Reservas, landing y CSS respondieron 200. El despliegue observado aún es la versión anterior; los cambios de este reto son locales y deben publicarse para verificar allí la nueva navbar y el carrusel.
+

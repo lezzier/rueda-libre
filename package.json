@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/lezzier/rueda-libre#readme",
   "devDependencies": {
-    "tailwindcss": "3.4.17"
+    "@tailwindcss/cli": "4.3.5",
+    "tailwindcss": "4.3.5"
   }
 }
