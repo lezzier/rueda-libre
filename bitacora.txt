@@ -382,7 +382,7 @@ También comprobé los límites de los breakpoints: a 639 px las rutas y los pas
 
 TEMA DE MARCA Y MODO OSCURO - RUEDA NOCTURNA
 
-- En nocturna/src/input.css definí con @theme los seis colores de marca (Verde Ruta, Naranja Pedal, Azul Noche, Crema, Gris Asfalto y Amarillo Farol) y las familias Montserrat y Open Sans, cargadas desde Google Fonts.
+- En tailwind.config.js definí en theme.extend los seis colores de marca y las familias Montserrat y Open Sans, usados por la landing y componentes.html.
 - La landing y componentes.html usan utilidades con estos nombres; el texto general usa Open Sans y los encabezados Montserrat. No quedan colores genéricos de Tailwind en esas dos páginas.
 - El modo claro conserva el fondo Crema, texto Azul Noche y tarjetas blancas. Con la variante dark: basada en prefers-color-scheme, el fondo cambia a Azul Noche, las tarjetas y campos a Gris Asfalto y los textos a Crema. El estado se adapta a la preferencia del sistema, sin selector manual.
 
@@ -427,8 +427,8 @@ Insignias de nivel                                             | 3
 Los seis enlaces de acción repetían el patrón de botón (cinco verdes y uno naranja). Tras el cambio, .boton boton-verde aparece cinco veces y .boton boton-naranja una vez. La landing no tiene campos de formulario. Creé tres clases propias dentro de @layer components en nocturna/src/input.css: .boton, .boton-verde y .boton-naranja. Las seis acciones las usan; las tarjetas conservan las clases del kit y la misma estructura. Ordené las utilidades por layout, espaciado, tipografía, color y estados, agrupando también los breakpoints responsive.
 
 Build y medición de Tailwind:
-- Tamaño del CSS minificado en disco: 22.378 bytes.
-- En la petición de la landing, Resource Timing del navegador registró 22.678 bytes transferidos en total y 22.378 bytes de cuerpo codificado (datos equivalentes a Size/Transferred en Network).
+- Tamaño del CSS minificado actual en disco: 17.838 bytes.
+- En la petición de la landing, Resource Timing del navegador registró 18.138 bytes transferidos en total y 17.838 bytes de cuerpo codificado.
 - Verifiqué la adaptación en 360 px (una columna de rutas y pasos), 768 px (dos y dos) y 1024 px (tres rutas y cuatro pasos), sin desbordamiento horizontal. También comprobé fondo, tarjetas, texto y botones en los modos claro y oscuro.
 
 Comparativa Bootstrap y Tailwind:
@@ -437,9 +437,25 @@ Criterio             | Bootstrap                                                
 ---------------------|----------------------------------------------------------|-----------------------------------------------------------
 Curva de aprendizaje | Sus clases de componente, como btn btn-primary, permiten | Hay que conocer y combinar utilidades; en esta landing, el patrón de seis botones se simplificó con tres clases propias.
                      | empezar rápido con patrones conocidos.                   |
-Personalización      | Conveniente para mantener componentes estándar; una      | En esta versión pude definir seis colores de marca en     |
-                     | identidad muy distinta puede requerir ajustes adicionales.| @theme y combinar responsive y dark: en el mismo marcado. |
+Personalización      | Conveniente para mantener componentes estándar; una      | En esta versión definí los colores y las familias en      |
+                     | identidad muy distinta puede requerir ajustes adicionales.| tailwind.config.js y combiné responsive y dark: en HTML.  |
+Tamaño final         | Depende de los recursos CSS y JavaScript incluidos en      | CSS minificado: 17.838 bytes; en la petición, 18.138     |
+                     | cada sitio y de los componentes que se utilicen.          | bytes transferidos; la landing no carga JavaScript.       |
 Casos de uso         | Buena opción para sitios con patrones convencionales y    | Encaja con una landing de marca propia y estados          |
                      | necesidad de montar componentes rápidamente.             | responsive/oscuro ajustados al diseño.                    |
 
+RETO 9 SEMANA 3
 
+Construí la sección #inscripcion con un formulario POST agrupado en tres conjuntos: "Tus datos", "Tu salida" y "Confirmación". Usé text para el nombre, email para el correo, tel para el celular, select para ruta/día/experiencia, number para acompañantes, radios para bicicleta propia y checkbox para aceptar condiciones. Cada control tiene name y label asociado; los radios comparten nombre para permitir una sola respuesta.
+
+Validación nativa:
+- Todos los datos son obligatorios; nombre minlength="3"; celular pattern="3[0-9]{9}" con title explicativo; acompañantes min="0", max="3" y step="1".
+- Datos inválidos probados: nombre "Al", correo mal formado, celular "1234567890" y cuatro acompañantes. El navegador marcó minlength, typeMismatch, patternMismatch y rangeOverflow, respectivamente.
+- Datos completos probados: Ana Perez, ana@example.com, 3001234567, Luces del Centro, jueves, 0 acompañantes, principiante, bicicleta propia Sí y condiciones aceptadas. checkValidity() devolvió true.
+- Recorrido con teclado: completé los campos con Tab, escritura, flechas para los selectores y Espacio para radio/casilla; llegué a "Enviar inscripción" y activé Enter. Intercepté el evento durante la prueba para no transmitir datos personales.
+
+Presentación y temas:
+- Los campos ocupan una columna en celular y dos desde md. Verifiqué 360, 768 y 1024 px; no hubo desbordamiento horizontal.
+- En claro, fondo crema y controles blancos. En oscuro, fondo Azul Noche, grupos y controles Gris Asfalto, texto Crema. El foco usa anillo visible.
+
+Tiempo real: inicio 16:13:50 fin 17:27:21 duración 1 h 13 min 31 s. Se superó el límite previsto de 40 minutos por 33 min 31 s.
