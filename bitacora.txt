@@ -470,3 +470,21 @@ RETO 10 SEMANA 3
 - En local comprobé que Inicio, Tarifas, Reservas, la landing y sus hojas CSS responden 200; los cuatro recursos de imagen del carrusel cargan. Confirmé también que las rutas relativas de navbar, carrusel, regreso y reserva resuelven a páginas 200.
 - En GitHub Pages las rutas publicadas de Inicio, Tarifas, Reservas, landing y CSS respondieron 200. El despliegue observado aún es la versión anterior; los cambios de este reto son locales y deben publicarse para verificar allí la nueva navbar y el carrusel.
 
+RETO 11 SEMANA 3
+
+- Añadí la sección #planes a la landing con los planes Individual ($55.000 por persona), Pareja ($99.000 las dos personas) y Grupo de 4 a 8 ($45.000 por persona), con sus beneficios y enlaces para inscribirse.
+- Usé una columna en celular y tres desde lg. Cada tarjeta usa flex-col y justify-between para dejar el botón al final; la lista de beneficios usa flex-col y gap-3.
+- Pareja destaca con borde más grueso, fondo distinto y la etiqueta «Más elegido». Las tres tarjetas conservan p-5.
+- En el navegador inspeccioné estilos calculados (getComputedStyle): a 1280 px las tarjetas miden 379 × 406 px, las tres tienen 20 px de padding y sus botones terminan en la misma coordenada. A 360 px quedan en una columna y no hay desbordamiento horizontal.
+- Probé el modo oscuro: la tarjeta Pareja usa fondo Azul Noche, borde Amarillo Farol y etiqueta Amarillo Farol con texto Azul Noche.
+- npm run build y git diff --check terminaron correctamente.
+
+ENTREGA V2.0 — Checklist y demo
+
+- Creé README.md con el resumen del sitio, páginas, enlaces de GitHub Pages, tecnologías, recomendación de framework del MiniReto 8, aprendizajes, autor y guion de demo de tres minutos.
+- Guardé capturas reales de la landing en escritorio, celular y tema oscuro en docs/capturas/.
+- Revisé las cinco páginas principales: idioma y un h1, textos alternativos en todas las imágenes y ausencia de etiquetas/atributos de estilo en línea. Corregí textos alternativos repetidos en Inicio y agrupé con nombre accesible las opciones de bicicleta del formulario de Reservas.
+- Nu del W3C validó las fuentes locales nocturna/index.html y paginas/reservas.html: 0 mensajes en cada una.
+- Probé Inicio, landing y Reservas a 360, 768 y 1280 px en navegador; no hubo scroll horizontal ni imágenes fallidas. El formulario de Reservas rechazó campos vacíos.
+- El chequeo local detectó y reparé el ancla #rutas rota de Inicio. Después, las rutas, imágenes y fragmentos internos de cinco páginas resolvieron correctamente.
+- npm run build generó nocturna/src/output.css minificado. Las páginas y CSS que ya están publicados respondieron 200.

@@ -67,19 +67,21 @@
                     <label for="fecha-alquiler">Fecha del alquiler</label>
                     <input type="date" id="fecha-alquiler" name="fechaAlquiler" min="2026-11-01" max="2026-12-31" required>
                 </p>
-                <p>Tipo de bicicleta</p>
-                <p>
-                    <input type="radio" id="bicicleta-urbana" name="tipoBicicleta" value="urbana" required>
-                    <label for="bicicleta-urbana">Urbana</label>
-                </p>
-                <p>
-                    <input type="radio" id="bicicleta-montana" name="tipoBicicleta" value="montana" required>
-                    <label for="bicicleta-montana">Montaña</label>
-                </p>
-                <p>
-                    <input type="radio" id="bicicleta-electrica" name="tipoBicicleta" value="electrica" required>
-                    <label for="bicicleta-electrica">Eléctrica</label>
-                </p>
+                <div role="group" aria-labelledby="tipo-bicicleta-label">
+                    <p id="tipo-bicicleta-label">Tipo de bicicleta</p>
+                    <p>
+                        <input type="radio" id="bicicleta-urbana" name="tipoBicicleta" value="urbana" required>
+                        <label for="bicicleta-urbana">Urbana</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="bicicleta-montana" name="tipoBicicleta" value="montana" required>
+                        <label for="bicicleta-montana">Montaña</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="bicicleta-electrica" name="tipoBicicleta" value="electrica" required>
+                        <label for="bicicleta-electrica">Eléctrica</label>
+                    </p>
+                </div>
                 <p>
                     <label for="plan">Plan</label>
                     <select id="plan" name="plan" required>

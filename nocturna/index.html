@@ -17,6 +17,7 @@
                 <nav aria-label="Navegación principal" class="hidden flex-wrap md:flex gap-4 text-sm font-semibold">
                     <a href="#inicio" class="no-underline text-crema hover:text-amarillo-farol focus:outline-none focus:ring-2 focus:ring-amarillo-farol">Inicio</a>
                     <a href="#rutas" class="no-underline text-crema hover:text-amarillo-farol focus:outline-none focus:ring-2 focus:ring-amarillo-farol">Rutas</a>
+                    <a href="#planes" class="no-underline text-crema hover:text-amarillo-farol focus:outline-none focus:ring-2 focus:ring-amarillo-farol">Planes</a>
                     <a href="#como-funciona" class="no-underline text-crema hover:text-amarillo-farol focus:outline-none focus:ring-2 focus:ring-amarillo-farol">¿Cómo funciona?</a>
                 </nav>
                 <a href="../paginas/reservas.html" class="boton boton-verde focus:ring-offset-azul-noche">Reserva tu bici</a>
@@ -101,6 +102,70 @@
                                 <a href="#inscripcion" class="boton boton-verde focus:ring-offset-gris-asfalto">Inscríbete</a>
                             </div>
                         </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="planes" aria-labelledby="planes-titulo">
+            <div class="mx-auto w-full max-w-7xl space-y-6 px-4 py-12 sm:space-y-8 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
+                <header class="max-w-3xl space-y-3">
+                    <p class="text-sm font-semibold uppercase tracking-widest text-azul-noche dark:text-amarillo-farol">Elige cómo rodar</p>
+                    <h2 id="planes-titulo" class="font-montserrat text-2xl font-bold sm:text-3xl lg:text-4xl">Planes Rueda Nocturna</h2>
+                    <p class="leading-relaxed text-gris-asfalto dark:text-crema">Todos los planes incluyen equipo, hidratación y acompañamiento de un guía certificado.</p>
+                </header>
+
+                <div class="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-3 lg:gap-8">
+                    <article class="flex h-full min-w-0 flex-col justify-between rounded-xl border-2 border-gris-asfalto/30 bg-white p-5 shadow-md dark:border-crema/20 dark:bg-gris-asfalto">
+                        <div class="space-y-4">
+                            <h3 class="font-montserrat text-2xl font-bold">Individual</h3>
+                            <div>
+                                <p class="text-3xl font-bold text-azul-noche dark:text-crema">$55.000</p>
+                                <p class="text-sm text-gris-asfalto dark:text-crema">por persona</p>
+                            </div>
+                            <ul class="flex flex-col gap-3">
+                                <li class="flex items-start gap-3"><span aria-hidden="true" class="mt-1 text-verde-ruta dark:text-amarillo-farol">✓</span><span>Bicicleta y casco</span></li>
+                                <li class="flex items-start gap-3"><span aria-hidden="true" class="mt-1 text-verde-ruta dark:text-amarillo-farol">✓</span><span>Luces LED y chaleco</span></li>
+                                <li class="flex items-start gap-3"><span aria-hidden="true" class="mt-1 text-verde-ruta dark:text-amarillo-farol">✓</span><span>Guía certificado</span></li>
+                                <li class="flex items-start gap-3"><span aria-hidden="true" class="mt-1 text-verde-ruta dark:text-amarillo-farol">✓</span><span>Hidratación</span></li>
+                            </ul>
+                        </div>
+                        <a href="#inscripcion" class="boton boton-verde mb-0.5 block text-center focus:ring-offset-white dark:focus:ring-offset-azul-noche">Elegir Individual</a>
+                    </article>
+
+                    <article class="flex h-full min-w-0 flex-col justify-between rounded-xl border-4 border-naranja-pedal bg-naranja-pedal/10 p-5 shadow-lg dark:border-amarillo-farol dark:bg-azul-noche">
+                        <div class="space-y-4">
+                            <span class="inline-block rounded-xl bg-naranja-pedal px-3 py-1 text-xs font-bold uppercase tracking-widest text-azul-noche dark:bg-amarillo-farol">Más elegido</span>
+                            <h3 class="font-montserrat text-2xl font-bold">Pareja</h3>
+                            <div>
+                                <p class="text-3xl font-bold text-azul-noche dark:text-crema">$99.000</p>
+                                <p class="text-sm text-gris-asfalto dark:text-crema">las dos personas</p>
+                            </div>
+                            <ul class="flex flex-col gap-3">
+                                <li class="flex items-start gap-3"><span aria-hidden="true" class="mt-1 text-verde-ruta dark:text-amarillo-farol">✓</span><span>Todo lo del plan Individual</span></li>
+                                <li class="flex items-start gap-3"><span aria-hidden="true" class="mt-1 text-verde-ruta dark:text-amarillo-farol">✓</span><span>Foto del recorrido</span></li>
+                                <li class="flex items-start gap-3"><span aria-hidden="true" class="mt-1 text-verde-ruta dark:text-amarillo-farol">✓</span><span>Snack para dos</span></li>
+                                <li class="flex items-start gap-3"><span aria-hidden="true" class="mt-1 text-verde-ruta dark:text-amarillo-farol">✓</span><span>Prioridad en la ruta</span></li>
+                            </ul>
+                        </div>
+                        <a href="#inscripcion" class="boton boton-naranja block text-center focus:ring-offset-naranja-pedal dark:focus:ring-offset-azul-noche">Elegir Pareja</a>
+                    </article>
+
+                    <article class="flex h-full min-w-0 flex-col justify-between rounded-xl border-2 border-gris-asfalto/30 bg-white p-5 shadow-md dark:border-crema/20 dark:bg-gris-asfalto">
+                        <div class="space-y-4">
+                            <h3 class="font-montserrat text-2xl font-bold">Grupo <span class="text-base font-semibold">(4 a 8)</span></h3>
+                            <div>
+                                <p class="text-3xl font-bold text-azul-noche dark:text-crema">$45.000</p>
+                                <p class="text-sm text-gris-asfalto dark:text-crema">por persona</p>
+                            </div>
+                            <ul class="flex flex-col gap-3">
+                                <li class="flex items-start gap-3"><span aria-hidden="true" class="mt-1 text-verde-ruta dark:text-amarillo-farol">✓</span><span>Todo lo del plan Individual</span></li>
+                                <li class="flex items-start gap-3"><span aria-hidden="true" class="mt-1 text-verde-ruta dark:text-amarillo-farol">✓</span><span>Guía exclusivo</span></li>
+                                <li class="flex items-start gap-3"><span aria-hidden="true" class="mt-1 text-verde-ruta dark:text-amarillo-farol">✓</span><span>Horario a elección</span></li>
+                                <li class="flex items-start gap-3"><span aria-hidden="true" class="mt-1 text-verde-ruta dark:text-amarillo-farol">✓</span><span>Fotos del grupo</span></li>
+                            </ul>
+                        </div>
+                        <a href="#inscripcion" class="boton boton-verde mb-0.5 block text-center focus:ring-offset-white dark:focus:ring-offset-azul-noche">Elegir Grupo</a>
                     </article>
                 </div>
             </div>
