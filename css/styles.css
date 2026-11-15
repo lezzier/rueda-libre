@@ -95,32 +95,32 @@ main {
     margin: auto;
 }
 
-.portada {
+.hero {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--espacio-m);
     min-height: 70vh;
 }
 
-.portada img {
+.hero img {
     width: 100%;
     height: auto;
     display: block;
 }
 
-.galeria-rutas {
+.route-gallery {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--espacio-m);
 }
 
-.tarjeta-ruta {
+.route-card {
     padding: var(--espacio-m);
     border: 0.125rem solid var(--color-naranja-pedal);
     border-radius: 0.5rem;
 }
 
-.tarjeta-ruta img {
+.route-card img {
     width: 100%;
     height: auto;
     display: block;
@@ -174,7 +174,7 @@ main {
     text-decoration: none;
 }
 
-#menu a.activo {
+#menu a.active {
     font-weight: 700;
     text-decoration: underline;
 }
@@ -199,7 +199,7 @@ footer {
 }
 
 /* tarjetas de servicios y el Nuevo en electricas */
-.tarjeta-servicio {
+.service-card {
     padding: var(--espacio-m);
     border: 0.125rem solid var(--color-naranja-pedal);
     border-radius: 0.5rem;
@@ -207,12 +207,12 @@ footer {
     position: relative;
 }
 
-.tarjeta-servicio img {
+.service-card img {
     width: 100%;
     display: block;
 }
 
-.etiqueta-nueva {
+.new-badge {
     position: absolute;
     top: var(--espacio-s);
     right: var(--espacio-s);
@@ -224,13 +224,13 @@ footer {
 }
 
 /* flota de bicicletas */
-.flota {
+.fleet {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
     gap: var(--espacio-m);
 }
 
-.tarjeta-flota {
+.fleet-card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -239,17 +239,17 @@ footer {
     border-radius: 0.5rem;
 }
 
-.tarjeta-flota img {
+.fleet-card img {
     width: 100%;
     display: block;
 }
 
-.tarjeta-flota .boton-reserva {
+.fleet-card .reservation-button {
     align-self: flex-start;
 }
 
 /* boton Reservar ahora */
-.boton-reserva {
+.reservation-button {
     display: inline-block;
     padding: var(--espacio-s) var(--espacio-m);
     background-color: var(--color-verde-ruta);
@@ -258,8 +258,8 @@ footer {
     font-weight: 600;
 }
 
-.boton-reserva:hover,
-.boton-reserva:focus {
+.reservation-button:hover,
+.reservation-button:focus {
     background-color: var(--color-naranja-pedal);
     color: var(--color-azul-noche);
     outline: 0.125rem solid var(--color-naranja-pedal);
@@ -267,13 +267,13 @@ footer {
 }
 
 /* reservas: formulario 2/3 y contacto 1/3 */
-.reserva-layout {
+.reservation-layout {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--espacio-m);
 }
 
-.reserva-contacto a {
+.reservation-contact a {
     overflow-wrap: anywhere;
 }
 
@@ -325,7 +325,7 @@ form p {
     margin: 0 0 var(--espacio-m);
 }
 
-.campos-cortos {
+.compact-fields {
     display: flex;
     flex-direction: column;
     gap: var(--espacio-m);
@@ -387,7 +387,7 @@ button:focus {
 }
 
 /* whatsapp flotante */
-.whatsapp-flotante {
+.floating-whatsapp {
     position: fixed;
     bottom: var(--espacio-m);
     right: var(--espacio-m);
@@ -397,8 +397,8 @@ button:focus {
     text-decoration: none;
 }
 
-.whatsapp-flotante:hover,
-.whatsapp-flotante:focus {
+.floating-whatsapp:hover,
+.floating-whatsapp:focus {
     background-color: var(--color-naranja-pedal);
     color: var(--color-azul-noche);
 }
@@ -416,27 +416,27 @@ button:focus {
         flex-wrap: wrap;
     }
 
-    .portada {
+    .hero {
         grid-template-columns: 1fr 1fr;
         align-items: center;
     }
 
-    .galeria-rutas {
+    .route-gallery {
         grid-template-columns: 1fr 1fr;
     }
 
-    .reserva-layout {
+    .reservation-layout {
         grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
         align-items: start;
     }
 
-    .campos-cortos {
+    .compact-fields {
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-end;
     }
 
-    .campos-cortos p {
+    .compact-fields p {
         flex: 1;
     }
 
@@ -452,7 +452,7 @@ button:focus {
 
 /* escritorio: las tres rutas en una sola fila */
 @media (min-width: 1200px) {
-    .galeria-rutas {
+    .route-gallery {
         grid-template-columns: repeat(3, 1fr);
     }
 }

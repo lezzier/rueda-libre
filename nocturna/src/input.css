@@ -2,28 +2,28 @@
 @import "tailwindcss";
 
 @theme {
-  --color-verde-ruta: #1E7A4F;
-  --color-naranja-pedal: #F39A2B;
-  --color-azul-noche: #14213D;
-  --color-crema: #FAF6EF;
-  --color-gris-asfalto: #5B6470;
-  --color-amarillo-farol: #FFD166;
+  --color-route-green: #1E7A4F;
+  --color-pedal-orange: #F39A2B;
+  --color-night-blue: #14213D;
+  --color-cream: #FAF6EF;
+  --color-asphalt-gray: #5B6470;
+  --color-lantern-yellow: #FFD166;
 
   --font-montserrat: "Montserrat", "Arial Black", sans-serif;
   --font-open-sans: "Open Sans", Arial, sans-serif;
 }
 
 @layer components {
-  .boton {
-    @apply inline-block rounded-xl px-6 py-3 text-base font-semibold uppercase tracking-wide no-underline transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-amarillo-farol focus:ring-offset-2;
+  .button {
+    @apply inline-block rounded-xl px-6 py-3 text-base font-semibold uppercase tracking-wide no-underline transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-lantern-yellow focus:ring-offset-2;
   }
 
-  .boton-verde {
-    @apply bg-verde-ruta text-white hover:bg-amarillo-farol hover:text-azul-noche;
+  .green-button {
+    @apply bg-route-green text-white hover:bg-lantern-yellow hover:text-night-blue;
   }
 
-  .boton-naranja {
-    @apply bg-naranja-pedal font-bold text-azul-noche hover:bg-amarillo-farol hover:text-azul-noche;
+  .orange-button {
+    @apply bg-pedal-orange font-bold text-night-blue hover:bg-lantern-yellow hover:text-night-blue;
   }
 }
 
